@@ -1,85 +1,83 @@
-# General CSS notes, advice and guidelines
+# General CSS notes, conseils et bonnes pratiques
 
 ---
 
-## Translations
+## Trductions
 
 * [Russian/русский](https://github.com/matmuchrapna/CSS-Guidelines/blob/master/README%20Russian.md)
+* [French/Français](https://github.com/flexbox)
 
 ---
 
-In working on large, long running projects with dozens of developers, it is
-important that we all work in a unified way in order to, among other things:
+En travaillant sur ​​de grands projets d'envergure fonctionnant avec des dizaines de développeurs, il est
+important que nous travaillions tous de façon unifiée avec pour objectif de :
 
-* Keep stylesheets maintainable
-* Keep code transparent and readable
-* Keep stylesheets scalable
+* Garder les feuilles de style maintenables
+* Garder le code transparent et lisible
+* Garder les feuilles de style extensibles
 
-There are a variety of techniques we must employ in order to satisfy these
-goals.
+Il existe plusieures techniques que nous devons employer pour satisfaire ces objectifs.
 
-The first part of this document will deal with syntax, formatting and CSS
-anatomy, the second part will deal with approach, mindframe and attitude toward
-writing and architecting CSS. Exciting, huh?
+La première partie de ce document traitera de la syntaxe, du formatage et de la taxonomie CSS
+La deuxième partie traitera de l'approche, l'état d'esprit et l'attitude à avoir pour écrire et architecturer du CSS.
+Passionnant, hein?
 
-## Contents
+## Contenu
 
-* [CSS document anatomy](#css-document-anatomy)
-  * [General](#general)
-  * [One file vs. many files](#one-file-vs-many-files)
-  * [Table of contents](#table-of-contents)
-  * [Section titles](#section-titles)
-* [Source order](#source-order)
-* [Anatomy of rulesets](#anatomy-of-rulesets)
-* [Naming conventions](#naming-conventions)
-  * [JS hooks](#js-hooks)
-  * [Internationalisation](#internationalisation)
-* [Comments](#comments)
-  * [Comments on steroids](#comments-on-steroids)
-    * [Quasi-qualified selectors](#quasi-qualified-selectors)
-    * [Tagging code](#tagging-code)
-    * [Object/extension pointers](#objectextension-pointers)
-* [Writing CSS](#writing-css)
-* [Building new components](#building-new-components)
-* [OOCSS](#oocss)
-* [Layout](#layout)
-* [Sizing UIs](#sizing-uis)
-  * [Font sizing](#font-sizing)
-* [Shorthand](#shorthand)
+* [Anatomie d'un document CSS](#css-document-anatomy)
+  * [Généralités](#general)
+  * [Un seul fichier ou plusieurs fichiers ?](#one-file-vs-many-files)
+  * [Table des matières](#table-of-contents)
+  * [Titre des sections](#section-titles)
+* [Ordre des sources](#source-order)
+* [Anatomie d'une règle](#anatomy-of-rulesets)
+* [Convention de nomage](#naming-conventions)
+  * [Ancres javascript](#js-hooks)
+  * [Localisation](#internationalisation)
+* [Commentaires](#comments)
+  * [Commentaires sous stéroïdes](#comments-on-steroids)
+    * [Sélecteurs spécifiques](#quasi-qualified-selectors)
+    * [Code des balises](#tagging-code)
+    * [Association des objets](#objectextension-pointers)
+* [Ecrire du CSS](#writing-css)
+* [Construire de nouveau composants](#building-new-components)
+* [CSSOO](#oocss)
+* [Mise en page](#layout)
+* [Taille des interfaces](#sizing-uis)
+  * [Taille des polices](#font-sizing)
+* [Sténographie](#shorthand)
 * [IDs](#ids)
-* [Selectors](#selectors)
-  * [Over qualified selectors](#over-qualified-selectors)
-  * [Selector performance](#selector-performance)
+* [Sélecteurs](#selectors)
+  * [Qualification des Sélecteurs](#over-qualified-selectors)
+  * [Performance des sélecteurs](#selector-performance)
 * [CSS selector intent](#css-selector-intent)
 * [`!important`](#important)
-* [Magic numbers and absolutes](#magic-numbers-and-absolutes)
-* [Conditional stylesheets](#conditional-stylesheets)
-* [Debugging](#debugging)
-* [Preprocessors](#preprocessors)
+* [Nombres magiques et absolu](#magic-numbers-and-absolutes)
+* [Style conditionnel](#conditional-stylesheets)
+* [Débugage](#debugging)
+* [Préprocesseurs](#preprocessors)
 
 ---
 
-## CSS Document Anatomy
+## Anatomie d'un document CSS
 
-No matter the document, we must always try and keep a common formatting. This
-means consistent commenting, consistent syntax and consistent naming.
+Peu importe le document, il faut toujours essayer de garder un formatage commun. Cela signifie une cohérence des commentaires, de la syntaxe et des règles de nommage.
 
-### General
+### Généralités
 
-Limit your stylesheets to a maximum 80 character width where possible.
-Exceptions may be gradient syntax and URLs in comments. That’s fine, there’s
-nothing we can do about that.
+Limitez vos feuilles de style avec un maximum de 80 caractères de longeur lorsque cela est possible.
+Des exceptions peuvent être la syntaxe des dégradés ainsi que les URL dans les commentaires. Il n'y a rien que nous puissions faire à ce sujet.
 
-I prefer four (4) space indents over tabs and write multi-line CSS.
+Je préfère deux (2) espaces aulieu des tabulations et écrire sur plusieurs lignes CSS.
 
-### One file vs. many files
+### Un seul fichier ou plusieurs fichiers ?
 
 Some people prefer to work with single, large files. This is fine, and by
 sticking to the following guidelines you’ll encounter no problems. Since moving
 to Sass I have started sharding my stylesheets out into lots of tiny includes.
 This too is fine… Whichever method you choose, the following rules and
 guidelines apply. The only notable difference is with regards our table of
-contents and our section titles. Read on for further explanation…
+contents and our section titles. Read on for further explanation...
 
 ### Table of contents
 
@@ -123,11 +121,11 @@ between each section, thus:
     [Our
     reset
     styles]
-    
-    
-    
-    
-    
+
+
+
+
+
     /*------------------------------------*\
         $FONT-FACE
     \*------------------------------------*/
@@ -164,7 +162,7 @@ For further reading I cannot recommend Jonathan Snook’s
     [selector]{
         [property]:[value];
         [<- Declaration ->]
-    }    
+    }
 
 I have a number of standards when structuring rulesets.
 
@@ -335,16 +333,16 @@ I use a docBlock-esque commenting style which I limit to 80 characters in length
 
     /**
      * This is a docBlock style comment
-     * 
+     *
      * This is a longer description of the comment, describing the code in more
      * detail. We limit these lines to a maximum of 80 characters in length.
-     * 
+     *
      * We can have markup in the comments, and are encouraged to do so:
-     * 
+     *
        <div class=foo>
            <p>Lorem</p>
        </div>
-     * 
+     *
      * We do not prefix lines of code with an asterisk as to do so would inhibit
      * copy and paste.
      */
@@ -402,7 +400,7 @@ a comment above it, for example:
      * ^navigation ^lists
      */
     .nav{}
-    
+
     /**
      * ^grids ^lists ^tables
      */
@@ -461,7 +459,7 @@ I work in an OOCSS manner; I split components into structure (objects) and
 skin (extensions). As an **analogy** (note, not example) take the following:
 
     .room{}
-    
+
     .room--kitchen{}
     .room--bedroom{}
     .room--bathroom{}
@@ -490,7 +488,7 @@ treatments.
 All components you build should be left totally free of widths; they should
 always remain fluid and their widths should be governed by a parent/grid system.
 
-Heights should **never** be be applied to elements. Heights should only be 
+Heights should **never** be be applied to elements. Heights should only be
 applied to things which had dimensions _before_ they entered the site (i.e.
 images and sprites). Never ever set heights on `p`s, `ul`s, `div`s, anything.
 You can often achieve the desired effect with `line-height` which is far more
