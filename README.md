@@ -224,7 +224,7 @@ In this example (from [inuit.css’s table grid system](
 https://github.com/csswizardry/inuit.css/blob/master/inuit.css/partials/base/_tables.scss#L88))
 it makes more sense to single-line our CSS.
 
-## Naming conventions
+## Convention de nommage
 
 For the most part I simply use hyphen delimited classes (e.g. `.foo-bar`, not
 `.foo_bar` or `.fooBar`), however in certain circumstances I use BEM (Block,
