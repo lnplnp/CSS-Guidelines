@@ -1,8 +1,8 @@
-# General CSS notes, conseils et bonnes pratiques
+# Guide des feuilles de styles CSS, conseils et bonnes pratiques
 
 ---
 
-## Trductions
+## Tarductions
 
 * [Russian/русский](https://github.com/matmuchrapna/CSS-Guidelines/blob/master/README%20Russian.md)
 * [French/Français](https://github.com/flexbox)
@@ -68,114 +68,115 @@ Peu importe le document, il faut toujours essayer de garder un formatage commun.
 Limitez vos feuilles de style avec un maximum de 80 caractères de longeur lorsque cela est possible.
 Des exceptions peuvent être la syntaxe des dégradés ainsi que les URL dans les commentaires. Il n'y a rien que nous puissions faire à ce sujet.
 
-Je préfère deux (2) espaces aulieu des tabulations et écrire sur plusieurs lignes CSS.
+Concernant l'indentation je préfère 2 espaces au lieu des tabulations et écrire sur plusieures lignes CSS.
 
 ### Un seul fichier ou plusieurs fichiers ?
 
-Some people prefer to work with single, large files. This is fine, and by
-sticking to the following guidelines you’ll encounter no problems. Since moving
-to Sass I have started sharding my stylesheets out into lots of tiny includes.
-This too is fine… Whichever method you choose, the following rules and
-guidelines apply. The only notable difference is with regards our table of
-contents and our section titles. Read on for further explanation...
+Certaines personnes préfèrent travailler avec de simple fichiers volumineux.
+Cela fonctionne très bien pour les petits projets mais avec les directives suivantes
+vous aller très vite renconter des problèmes.
+Depuis l'arrivée de sass j'ai commencé à séparer mes feuilles de styles en petits fichiers.
+Cette méthode est aussi très bonne. Quelle que soit la méthode que vous choisissez, les règles suivantes et
+les lignes directrices s'appliquent. La seule différence notable est en ce qui concerne notre table des
+matières et nos titres de section. Lisez la suite pour plus d'explications ...
 
-### Table of contents
+### Table des matières
 
-At the top of stylesheets, I maintain a table of contents which will detail the
-sections contained in the document, for example:
+Au sommet des feuilles de style, je maintiens une table des matières qui détaillera les
+sections contenues dans le document, par exemple:
+
 
     /*------------------------------------*\
-        $CONTENTS
+        $CONTENU
     \*------------------------------------*/
     /**
-     * CONTENTS............You’re reading it!
-     * RESET...............Set our reset defaults
-     * FONT-FACE...........Import brand font files
+     * CONTENU.............Vous êtes en train de le lire
+     * RESET...............Réinitialisation des styles par défaut
+     * FONT................Les polices de caractère
      */
 
-This will tell the next developer(s) exactly what they can expect to find in
-this file. Each item in the table of contents maps directly to a section title.
+Ceci va permettre au prochain développeur de savoir exactement ce qu'il va trouver dans
+ce fichier. Chaque élément de la table des matières correspond directement à un titre de section.
 
-If you are working in one big stylesheet, the corresponding section will also be
-in that file. If you are working across multiple files then each item in the
-table of contents will map to an include which pulls that section in.
+Si vous travaillez sur une grande feuille de style, la section correspondante sera également
+dans ce fichier. Si vous travaillez sur plusieurs fichiers, chaque élément de la
+table des matières correspondra à une inclusion.
 
-### Section titles
+### Titres de section
 
-The table of contents would be of no use unless it had corresponding section
-titles. Denote a section thus:
-
-    /*------------------------------------*\
-        $RESET
-    \*------------------------------------*/
-
-The `$` prefixing the name of the section allows us to run a find ([Cmd|Ctrl]+F)
-for `$[SECTION-NAME]` and **limit our search scope to section titles only**.
-
-If you are working in one large stylesheet, you leave five (5) carriage returns
-between each section, thus:
+La table des matières ne serait d'aucune utilité si elle ne possède pas une section correspondante.
+Les sections sont désignées ainsi :
 
     /*------------------------------------*\
         $RESET
     \*------------------------------------*/
-    [Our
-    reset
-    styles]
+
+Le préfixe `$` dans une section permet de faire une recherche rapide ([Cmd|Ctrl]+F ou ([Ctrl|Shift]+F))
+
+Si vous travaillez dans une grande feuille de style, laissez cinq (5) retours chariot
+entre chaque section, comme ceci :
+
+    /*------------------------------------*\
+        $RESET
+    \*------------------------------------*/
+    [Vos
+    styles
+    par défaut]
 
 
 
 
 
     /*------------------------------------*\
-        $FONT-FACE
+        $FONT
     \*------------------------------------*/
 
-This large chunk of whitespace is quickly noticeable when scrolling quickly
-through larger files.
+Ce gros morceau d'espaces est rapidement perceptible lorsque vous faites défiler
+des fichiers plus volumineux.
 
-If you are working across multiple, included stylesheets, start each of those
-files with a section title and there is no need for any carriage returns.
+Si vous travaillez sur plusieurs feuilles de styles, démarrez chacun de ces
+fichiers avec un titre de section. Il n'est pas nécessaire d'inclure des retours chariot.
 
-## Source order
+## Ordre des sources
 
-Try and write stylesheets in specificity order. This ensures that you take full
-advantage of inheritance and CSS’ first <i>C</i>; the cascade.
+Essayez d'écrire des feuilles de style dans leur ordre de spécificité. Cela garantit que vous
+conservez l'avantage de l'héritage en compte ainsi que le <i>C</i> du CSS qui signifie cascade.
 
-A well ordered stylesheet will be ordered something like this:
+Une feuille de style bien ordonnée ressemblera à ceci :
 
-1. **Reset** – ground zero.
-2. **Elements** – unclassed `h1`, unclassed `ul` etc.
-3. **Objects and abstractions** — generic, underlying design patterns.
-4. **Components** – full components constructed from objects and their
-   extensions.
-5. **Style trumps** – error states etc.
+1. **Reset** – réinitialisation des propriétés.
+2. **Elements** – propriétés de bases `h1`, `ul` etc.
+3. **Objets et abstractions** — patrons de conception génériques.
+4. **Composants** – composants complets construits à partir d'objets et de leurs extensions.
+5. **Atouts de style** – états des erreurs etc.
 
-This means that—as you go down the document—each section builds upon and
-inherits sensibly from the previous one(s). There should be less undoing of
-styles, less specificity problems and all-round better architected stylesheets.
+Cela signifie que, lorsque vous descendez dans le document chaque section s'appuie et
+hérite de la précédente. Il devrait y avoir moins d'annulation de
+styles, moins de problèmes de spécificité, moins de création de style tous azimuts et une
+meilleure architecture de vos feuilles.
 
-For further reading I cannot recommend Jonathan Snook’s
-[SMACSS](http://smacss.com) highly enough.
+Pour en savoir plus, Je vous recommancde chaudement de lire
+[SMACSS](http://smacss.com) de Jonathan Snook.
 
-## Anatomy of rulesets
+## Anatomie d'une règle
 
-    [selector]{
-        [property]:[value];
-        [<- Declaration ->]
+    [selecteur]{
+        [propriété]:[valeur];
+        [<- Déclaration ->]
     }
 
-I have a number of standards when structuring rulesets.
+J'applique un certain nombre de normes concernant la structure des règles CSS.
 
-* Use hyphen delimited class names (except for BEM notation,
-  [see below](#naming-conventions))
-* 4 space indented
-* Multi-line
-* Declarations in relevance (NOT alphabetical) order
-* Indent vendor prefixed declarations so that their values are aligned
-* Indent our rulesets to mirror the DOM
-* Always include the final semi-colon in a ruleset
+* Utiliser `-` pour délimiter les noms de classe (sauf pour cet exemple de,
+  [convention de nommage](#naming-conventions))
+* 2 espaces d'indentation
+* Multi-ligne
+* Déclaration par ordre de pertinence (et non alphabétique)
+* Indenter les déclarations de préfixes et aligner leurs valeurs
+* Indenter les règles en reflètant le DOM
+* Toujours inclure le point-virgule final
 
-A brief example:
+Un petit exemple :
 
     .widget{
         padding:10px;
@@ -195,16 +196,20 @@ A brief example:
             padding:0.25em;
         }
 
-Here we can see that `.widget-heading` must be a child of `.widget` as we have
-indented the `.widget-heading` ruleset one level deeper than `.widget`. This is
-useful information to developers that can now be gleaned just by a glance at the
-indentation of our rulesets.
+Ici, nous pouvons voir que `.widget-heading` doit être un enfant de `.widget` que nous avons
+indenté .widget-heading` d'un niveau plus profond que `.widget`. C'est une
+information utile pour les développeurs qui peuvent être scannées seulement d'un coup d'œil
+suivant l'indentation de notre ensemble de règles.
 
 We can also see that `.widget-heading`’s declarations are ordered by their
 relevance; `.widget-heading` must be a textual element so we begin with our
 text rules, followed by everything else.
 
-One exception to our multi-line rule might be in cases of the following:
+Nous pouvons également voir que les déclarations de `.widget-heading` sont triés par leur
+pertinence. `.widget-heading` doit être un élément textuel si nous commençons avec nos
+règles de texte, suivie par toutes les autres.
+
+Une exception à notre règle multi-ligne pourrait être dans le cas suivant :
 
     .t10    { width:10% }
     .t20    { width:20% }
@@ -220,9 +225,9 @@ One exception to our multi-line rule might be in cases of the following:
     .t80    { width:80% }
     .t90    { width:90% }
 
-In this example (from [inuit.css’s table grid system](
+Dans cet exemple (extrait du système de grille d'[inuit.css](
 https://github.com/csswizardry/inuit.css/blob/master/inuit.css/partials/base/_tables.scss#L88))
-it makes more sense to single-line our CSS.
+il est plus logique de tout concentrer sur une seule ligne.
 
 ## Convention de nommage
 
@@ -230,22 +235,26 @@ For the most part I simply use hyphen delimited classes (e.g. `.foo-bar`, not
 `.foo_bar` or `.fooBar`), however in certain circumstances I use BEM (Block,
 Element, Modifier) notation.
 
-<abbr title="Block, Element, Modifier">BEM</abbr> is a methodology for naming
-and classifying CSS selectors in a way to make them a lot more strict,
-transparent and informative.
+La plupart du temps, j'utilise simplement des classes délimités par des traits d'union (ex. `. Foo-bar`, pas
+`. foo_bar` ou `. FooBar), mais dans certaines circonstances, j'utilise la notation BEM (Block,
+Élément, Modifieur).
 
-The naming convention follows this pattern:
+<abbr title="Block, Element, Modifier">BEM</abbr> est une méthode pour nommer
+et classifier vos sélecteurs CSS de façon à les rendre beaucoup plus strict,
+transparent et informatif.
+
+La convention de nommage suit ce modèle :
 
     .block{}
     .block__element{}
     .block--modifier{}
 
-* `.block` represents the higher level of an abstraction or component.
-* `.block__element` represents a descendent of `.block` that helps form `.block`
-  as a whole.
-* `.block--modifier` represents a different state or version of `.block`.
+* `.block` représente le niveau supérieur d'une abstraction ou d'un composant.
+* `.block__element` représente un descendant de `.bloc` puisqu'il contribue à former `.bloc`
+   dans son ensemble.
+* `.block--modifier` représente un état ou une version différente de `.block`.
 
-An **analogy** of how BEM classes work might be:
+Une **analogie** du fonctionement de la méthode BEM :
 
     .person{}
     .person--woman{}
