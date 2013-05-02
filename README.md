@@ -31,6 +31,7 @@ Passionnant, hein?
   * [Titre des sections](#section-titles)
 * [Ordre des sources](#source-order)
 * [Anatomie d'une règle](#anatomy-of-rulesets)
+* [Classes en HTML](#html-class)
 * [Convention de nomage](#naming-conventions)
   * [Ancres javascript](#js-hooks)
   * [Localisation](#internationalisation)
@@ -53,7 +54,7 @@ Passionnant, hein?
 * [CSS selector intent](#css-selector-intent)
 * [`!important`](#important)
 * [Nombres magiques et absolu](#magic-numbers-and-absolutes)
-* [Style conditionnel](#conditional-stylesheets)
+* [Styles conditionnel](#conditional-stylesheets)
 * [Débugage](#debugging)
 * [Préprocesseurs](#preprocessors)
 
@@ -247,34 +248,35 @@ La convention de nommage suit ce modèle :
 
     .block{}
     .block__element{}
-    .block--modifier{}
+    .block--modifieur{}
 
 * `.block` représente le niveau supérieur d'une abstraction ou d'un composant.
 * `.block__element` représente un descendant de `.bloc` puisqu'il contribue à former `.bloc`
    dans son ensemble.
-* `.block--modifier` représente un état ou une version différente de `.block`.
+* `.block--modifieur` représente un état ou une version différente de `.block`.
 
 Une **analogie** du fonctionement de la méthode BEM :
 
-    .person{}
-    .person--woman{}
-        .person__hand{}
-        .person__hand--left{}
-        .person__hand--right{}
+    .personne{}
+    .personne--femme{}
+        .personne__main{}
+        .personne__main--gauche{}
+        .personne__main--droite{}
 
-Here we can see that the basic object we’re describing is a person, and that a
-different type of person might be a woman. We can also see that people have
-hands; these are sub-parts of people, and there are different variations,
-like left and right.
+Ici, nous pouvons voir que l'objet de base que nous décrivons est une personne, et qu'une
+autre type de personne pourrait être une femme. Nous pouvons également voir que les gens ont
+des mains, ce sont des sous-parties des personnes, et il y a différentes variantes,
+comme main gauche et main droite.
 
-We can now namespace our selectors based on their base objects and we can also
-communicate what job the selector does; is it a sub-component (`__`) or a
+Nous pouvons maintenant nommer nos sélectionneurs en fonction de leurs objets de base et nous pouvons également
+savoir ce que le sélecteur fait, est-il un sous-composant (`__`) ou une
 variation (`--`)?
 
-So, `.page-wrapper` is a standalone selector; it doesn’t form part of an
-abstraction or a component and as such it named correctly. `.widget-heading`,
-however, _is_ related to a component; it is a child of the `.widget` construct
-so we would rename this class `.widget__heading`.
+Ainsi, `.page-wrapper` est un sélecteur autonome, il ne fait pas partie d'une
+abstraction ou d'un composant et comme tel il nommé correctement.
+Toutefois, `.widget-heading`
+ _est_ lié à un composant, c'est un enfant du constructeur `.widget`.
+Nous devrions renommer cette classe `.widget__heading`.
 
 BEM looks a little uglier, and is a lot more verbose, but it grants us a lot of
 power in that we can glean the functions and relationships of elements from
@@ -288,7 +290,7 @@ to allow for greater reuse. Extensions of objects should be much more explicitly
 named (e.g. `.user-avatar-link`). Don’t worry about the amount or length of
 classes; gzip will compress well written code _incredibly_ well.
 
-### Classes in HTML
+### Classes en HTML
 
 In a bid to make things easier to read, separate classes is your HTML with two
 (2) spaces, thus:
@@ -298,7 +300,7 @@ In a bid to make things easier to read, separate classes is your HTML with two
 This increased whitespace should hopefully allow for easier spotting and reading
 of multiple classes.
 
-### JS hooks
+### Ancres Javascript
 
 **Never use a CSS _styling_ class as a JavaScript hook.** Attaching JS behaviour
 to a styling class means that we can never have one without the other.
@@ -315,7 +317,7 @@ The above markup holds two classes; one to which you can attach some styling for
 sortable table columns and another which allows you to add the sorting
 functionality.
 
-### Internationalisation
+### Localisation
 
 Despite being a British developer—and spending all my life writing <i>colour</i>
 instead of <i>color</i>—I feel that, for the sake of consistency, it is better
@@ -336,7 +338,7 @@ twice as much work with things like find and replace.
 In the interests of consistency, always name classes and variables in the locale
 of the language you are working with.
 
-## Comments
+## Commentaires
 
 I use a docBlock-esque commenting style which I limit to 80 characters in length:
 
@@ -360,7 +362,7 @@ You should document and comment our code as much as you possibly can, what may
 seem or feel transparent and self explanatory to you may not be to another dev.
 Write a chunk of code then write about it.
 
-### Comments on steroids
+### Commentaires sous stéroïdes
 
 There are a number of more advanced techniques you can employ with regards
 comments, namely:
@@ -369,7 +371,7 @@ comments, namely:
 * Tagging code
 * Object/extension pointers
 
-#### Quasi-qualified selectors
+#### Sélecteurs spécifiques
 
 You should never qualify your selectors; that is to say, we should never write
 `ul.nav{}` if you can just have `.nav`. Qualifying selectors decreases selector
@@ -400,7 +402,7 @@ Other examples might be:
 Here we can see where we intend each of these classes to be applied without
 actually ever impacting the specificity of the selectors.
 
-#### Tagging code
+#### Code des balises
 
 If you write a new component then leave some tags pertaining to its function in
 a comment above it, for example:
@@ -419,7 +421,7 @@ These tags allow other developers to find snippets of code by searching for
 function; if a developer needs to work with lists they can run a find for
 `^lists` and find the `.nav` and `.matrix` objects (and possibly more).
 
-#### Object/extension pointers
+#### Association des objets
 
 When working in an object oriented manner you will often have two chunks of CSS
 (one being the skeleton (the object) and the other being the skin (the
@@ -447,13 +449,13 @@ pieces of code.
 
 ---
 
-## Writing CSS
+## Ecrire du CSS
 
 The previous section dealt with how we structure and form our CSS; they were
 very quantifiable rules. The next section is a little more theoretical and deals
 with our attitude and approach.
 
-## Building new components
+## Construire de nouveau composants
 
 When building a new component write markup **before** CSS. This means you can
 visually see which CSS properties are naturally inherited and thus avoid
@@ -462,7 +464,7 @@ reapplying redundant styles.
 By writing markup first you can focus on data, content and semantics and then
 apply only the relevant classes and CSS _afterwards_.
 
-## OOCSS
+## CSSOO
 
 I work in an OOCSS manner; I split components into structure (objects) and
 skin (extensions). As an **analogy** (note, not example) take the following:
@@ -492,7 +494,7 @@ structure of the component using very generic classes so that we can reuse that
 construct and then use more specific classes to skin it up and add design
 treatments.
 
-## Layout
+## Mise en page
 
 All components you build should be left totally free of widths; they should
 always remain fluid and their widths should be governed by a parent/grid system.
@@ -513,7 +515,7 @@ You should never apply any styles to a grid item, they are for layout purposes
 only. Apply styling to content _inside_ a grid item. Never, under _any_
 circumstances, apply box-model properties to a grid item.
 
-## Sizing UIs
+## Taille des interfaces
 
 I use a combination of methods for sizing UIs. Percentages, pixels, ems, rems
 and nothing at all.
@@ -536,14 +538,14 @@ I only use pixels for items whose dimensions were defined before the came into
 the site. This includes things like images and sprites whose dimensions are
 inherently set absolutely in pixels.
 
-### Font sizing
+### Taille des polices
 
 I define a series of classes akin to a grid system for sizing fonts. These
 classes can be used to style type in a double stranded heading hierarchy. For a
 full explanation of how this works please refer to my article
 [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css)
 
-## Shorthand
+## Sténographie
 
 **Shorthand CSS needs to be used with caution.**
 
@@ -578,7 +580,7 @@ ways to run into difficulties in projects and keeping it low at all times is
 imperative. An ID is **255** times more specific than a class, so never ever use
 them in CSS _ever_.
 
-## Selectors
+## Sélecteurs
 
 Keep selectors short, efficient and portable.
 
@@ -602,7 +604,7 @@ is far nicer than `.usr-avt`.
 insensible! Stop stressing about ‘semantic’ class names and pick something
 sensible and futureproof.
 
-### Over-qualified selectors
+### Qualification des Sélecteurs
 
 As discussed above, qualified selectors are bad news.
 
@@ -618,7 +620,7 @@ above, we can instantly drop the `ul` and because we know `.nav` is a list, we
 therefore know that any `a` _must_ be in an `li`, so we can get `ul.nav li a{}`
 down to just `.nav a{}`.
 
-### Selector performance
+### Performance des sélecteurs
 
 Whilst it is true that browsers will only ever keep getting faster at rendering
 CSS, efficiency is something you could do to keep an eye on. Short, unnested
@@ -667,7 +669,7 @@ situations, is not advised. Rework your CSS and try to combat these issues by
 refactoring your selectors. Keeping your selectors short and avoiding IDs will
 help out here massively.
 
-## Magic numbers and absolutes
+## Nombres magiques et absolus
 
 A magic number is a number which is used because ‘it just works’. These are bad
 because they rarely work for any real reason and are not usually very
@@ -689,7 +691,7 @@ or&mdash;even better&mdash;no measurements at all then you probably should.
 Every hard-coded measurement you set is a commitment you might not necessarily
 want to keep.
 
-## Conditional stylesheets
+## Styles conditionnel
 
 IE stylesheets can, by and large, be totally avoided. The only time an IE
 stylesheet may be required is to circumvent blatant lack of support (e.g. PNG
@@ -700,7 +702,7 @@ IE stylesheet if you refactor and rework your CSS. This means you never want to
 see `<!--[if IE 7]> element{ margin-left:-9px; } < ![endif]-->` or other such
 CSS that is clearly using arbitrary styling to just ‘make stuff work’.
 
-## Debugging
+## Débugage
 
 If you run into a CSS problem **take code away before you start adding more** in
 a bid to fix it. The problem exists in CSS that is already written, more CSS
@@ -713,7 +715,7 @@ It can be tempting to put an `overflow:hidden;` on something to hide the effects
 of a layout quirk, but overflow was probably never the problem; **fix the
 problem, not its symptoms.**
 
-## Preprocessors
+## Préprocesseurs
 
 Sass is my preprocessor of choice. **Use it wisely.** Use Sass to make your CSS
 more powerful but avoid nesting like the plague! Nest only when it would
