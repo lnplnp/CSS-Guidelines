@@ -278,37 +278,38 @@ Toutefois, `.widget-heading`
  _est_ lié à un composant, c'est un enfant du constructeur `.widget`.
 Nous devrions renommer cette classe `.widget__heading`.
 
-BEM looks a little uglier, and is a lot more verbose, but it grants us a lot of
-power in that we can glean the functions and relationships of elements from
-their classes alone. Also, BEM syntax will typically compress (gzip) very well
-as compression favours/works well with repetition.
+La notation BEM est un peu laide, plus verbeuse, mais elle nous donne beaucoup plus de pouvoir dans le glanage d'informations sur les fonctions et sur les relations entre les éléments, uniquement avec leurs nom de classes. En outre, la syntaxe BEM sera généralement très bien compressée (gzip) puisqu'elle favorise / fonctionne bien avec la répétition.
 
-Regardless of whether you need to use BEM or not, always ensure classes are
-sensibly named; keep them as short as possible but as long as necessary. Ensure
-any objects or abstractions are very vaguely named (e.g. `.ui-list`, `.media`)
-to allow for greater reuse. Extensions of objects should be much more explicitly
-named (e.g. `.user-avatar-link`). Don’t worry about the amount or length of
-classes; gzip will compress well written code _incredibly_ well.
+Peu importe si vous avez besoin d'utiliser BEM ou non, assurez-vous de toujours nommer vos classes judicieusement; garder un nom aussi court que possible, mais aussi long que nécessaire. S'assurer que les objets ou les abstractions sont très vaguement nommées (par exemple `.ui-list`, `.media`) pour permettre une meilleure réutilisation.
+Les extensions des objets devraient être nommées beaucoup plus explicitement
+(par exemple `.user-avatar-link`). Ne vous inquiétez pas du montant ou de la taille de
+vos classes; gzip compresse le code bien écrit _incroyablement_ bien.
 
 ### Classes en HTML
 
-In a bid to make things easier to read, separate classes is your HTML with two
-(2) spaces, thus:
+Dans le but de rendre les choses plus faciles à lire, séparez les classes dans
+votre HTML avec deux (2) espaces :
 
     <div class="foo--bar  bar__baz">
 
-This increased whitespace should hopefully allow for easier spotting and reading
-of multiple classes.
+L'augmentation des espaces blancs devrait, faciliter le repérage et la lecture
+de plusieurs classes.
 
 ### Ancres Javascript
 
-**Never use a CSS _styling_ class as a JavaScript hook.** Attaching JS behaviour
-to a styling class means that we can never have one without the other.
+**N'utilisez jamais une classe de _style_ CSS pour vos ancres Javascript**
+Associer un comportement javascript à une classe de style  signifie que nous ne
+pourrons jamais avoir l'un sans l'autre.
 
 If you need to bind to some markup use a JS specific CSS class. This is simply a
 class namespaced with `.js-`, e.g. `.js-toggle`, `.js-drag-and-drop`. This means
 that we can attach both JS and CSS to classes in our markup but there will never
 be any troublesome overlap.
+
+Si vous avez besoin de se lier à d'autres balises utiliser une classe CSS spécifique JS. Il s'agit simplement d'un
+classe un espace de noms avec `. js-`, par exemple `. js-bascule`, `.` js-drag-and-drop. Cela signifie
+que nous pouvons joindre les deux JS et CSS pour les classes de notre balisage, mais il n'y aura jamais
+y avoir de chevauchement gênants.
 
     <th class="is-sortable  js-is-sortable">
     </th>
