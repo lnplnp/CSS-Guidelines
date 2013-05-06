@@ -202,10 +202,6 @@ indenté .widget-heading` d'un niveau plus profond que `.widget`. C'est une
 information utile pour les développeurs qui peuvent être scannées seulement d'un coup d'œil
 suivant l'indentation de notre ensemble de règles.
 
-We can also see that `.widget-heading`’s declarations are ordered by their
-relevance; `.widget-heading` must be a textual element so we begin with our
-text rules, followed by everything else.
-
 Nous pouvons également voir que les déclarations de `.widget-heading` sont triés par leur
 pertinence. `.widget-heading` doit être un élément textuel si nous commençons avec nos
 règles de texte, suivie par toutes les autres.
@@ -231,10 +227,6 @@ https://github.com/csswizardry/inuit.css/blob/master/inuit.css/partials/base/_ta
 il est plus logique de tout concentrer sur une seule ligne.
 
 ## Convention de nommage
-
-For the most part I simply use hyphen delimited classes (e.g. `.foo-bar`, not
-`.foo_bar` or `.fooBar`), however in certain circumstances I use BEM (Block,
-Element, Modifier) notation.
 
 La plupart du temps, j'utilise simplement des classes délimités par des traits d'union (ex. `. Foo-bar`, pas
 `. foo_bar` ou `. FooBar), mais dans certaines circonstances, j'utilise la notation BEM (Block,
@@ -268,8 +260,8 @@ autre type de personne pourrait être une femme. Nous pouvons également voir qu
 des mains, ce sont des sous-parties des personnes, et il y a différentes variantes,
 comme main gauche et main droite.
 
-Nous pouvons maintenant nommer nos sélectionneurs en fonction de leurs objets de base et nous pouvons également
-savoir ce que le sélecteur fait, est-il un sous-composant (`__`) ou une
+Nous pouvons maintenant nommer nos sélectionneurs en fonction de leurs objets de base et nous
+pouvons également savoir ce que le sélecteur fait, est-il un sous-composant (`__`) ou une
 variation (`--`)?
 
 Ainsi, `.page-wrapper` est un sélecteur autonome, il ne fait pas partie d'une
@@ -301,15 +293,10 @@ de plusieurs classes.
 Associer un comportement javascript à une classe de style  signifie que nous ne
 pourrons jamais avoir l'un sans l'autre.
 
-If you need to bind to some markup use a JS specific CSS class. This is simply a
-class namespaced with `.js-`, e.g. `.js-toggle`, `.js-drag-and-drop`. This means
-that we can attach both JS and CSS to classes in our markup but there will never
-be any troublesome overlap.
-
-Si vous avez besoin de se lier à d'autres balises utiliser une classe CSS spécifique JS. Il s'agit simplement d'un
-classe un espace de noms avec `. js-`, par exemple `. js-bascule`, `.` js-drag-and-drop. Cela signifie
-que nous pouvons joindre les deux JS et CSS pour les classes de notre balisage, mais il n'y aura jamais
-y avoir de chevauchement gênants.
+Si vous avez besoin de se lier un évènement à une balise, créez une classe JS dans votre CSS.
+Il s'agit simplement d'une classe avec un nommage `.js-`, par exemple `.js-toggle`, `.js-drag-and-drop`.
+Cela signifie que nous pouvons joindre les deux classes JS et CSS pour notre balisage, sans avoir
+de chevauchement gênants.
 
     <th class="is-sortable  js-is-sortable">
     </th>
