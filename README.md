@@ -2,14 +2,14 @@
 
 ---
 
-## Tarductions
+## Traductions
 
 * [Russian/русский](https://github.com/matmuchrapna/CSS-Guidelines/blob/master/README%20Russian.md)
 * [French/Français](https://github.com/flexbox)
 
 ---
 
-En travaillant sur ​​de grands projets d'envergure fonctionnant avec des dizaines de développeurs, il est
+En travaillant sur de grands projets d'envergure fonctionnant avec des dizaines de développeurs, il est
 important que nous travaillions tous de façon unifiée avec pour objectif de :
 
 * Garder les feuilles de style maintenables
@@ -296,14 +296,13 @@ pourrons jamais avoir l'un sans l'autre.
 Si vous avez besoin de se lier un évènement à une balise, créez une classe JS dans votre CSS.
 Il s'agit simplement d'une classe avec un nommage `.js-`, par exemple `.js-toggle`, `.js-drag-and-drop`.
 Cela signifie que nous pouvons joindre les deux classes JS et CSS pour notre balisage, sans avoir
-de chevauchement gênants.
+de chevauchements gênants.
 
     <th class="is-sortable  js-is-sortable">
     </th>
 
-The above markup holds two classes; one to which you can attach some styling for
-sortable table columns and another which allows you to add the sorting
-functionality.
+Le balisage ci-dessus contient deux classes; la première est associée au style du
+tableau, la deuxième à une fonction de tri.
 
 ### Localisation
 
@@ -312,7 +311,13 @@ instead of <i>color</i>—I feel that, for the sake of consistency, it is better
 to always use US-English in CSS. CSS, as with most (if not all) other languages,
 is written in US-English, so to mix syntax like `color:red;` with classes like
 `.colour-picker{}` lacks consistency. I have previously suggested and advocated
-writing bilingual classes, for example:
+writing bilingual classes, par exemple :
+
+En dépit d'être un développeur Anglais, je passe ma vie à écrire <i>colour</i>
+au lieu de <i>color</i> Je pense que, dans un souci de cohérence, il est préférable
+d'utiliser toujours un anglais Américain en CSS. CSS, comme avec la plupart (sinon tous) les autres langages,
+est écrit en anglais-US. Mélanger une syntaxe `color: red;` avec des classes comme
+`.colour-picker{}` peut manquer de cohérence. J'ai déjà proposé et défendu une écriture des classes bilingues,
 
     .color-picker,
     .colour-picker{
@@ -323,17 +328,22 @@ dozens of colour variables (e.g. `$brand-color`, `$highlight-color` etc.),
 maintaining two versions of each variable soon became tiresome. It also means
 twice as much work with things like find and replace.
 
-In the interests of consistency, always name classes and variables in the locale
-of the language you are working with.
+Cependant, après avoir récemment travaillé sur un projet de grande envergure en Sass où il y avait
+des dizaines de variables de couleur (par exemple `$brand-color`, `$highlight-color` etc.),
+maintenir deux versions de chaque variable est vite devenu ennuyeux. Cela signifie également
+deux fois plus de travail avec des choses comme rechercher et remplacer.
+
+Dans un souci de cohérence, toujours nommer les classes et les variables dans les paramètres régionaux
+de la langue que vous utilisez.
 
 ## Commentaires
 
-I use a docBlock-esque commenting style which I limit to 80 characters in length:
+J'utilise un style de commentaire docBlock où la taille est limitée à 80 caractères :
 
     /**
-     * This is a docBlock style comment
+     * Ceci est un commentaire de style DocBlock
      *
-     * This is a longer description of the comment, describing the code in more
+     * Ceci est une description plus détaillée
      * detail. We limit these lines to a maximum of 80 characters in length.
      *
      * We can have markup in the comments, and are encouraged to do so:
