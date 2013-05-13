@@ -323,18 +323,15 @@ est écrit en anglais-US. Mélanger une syntaxe `color: red;` avec des classes c
     .colour-picker{
     }
 
-However, having recently worked on a very large Sass project where there were
-dozens of colour variables (e.g. `$brand-color`, `$highlight-color` etc.),
-maintaining two versions of each variable soon became tiresome. It also means
-twice as much work with things like find and replace.
-
 Cependant, après avoir récemment travaillé sur un projet de grande envergure en Sass où il y avait
 des dizaines de variables de couleur (par exemple `$brand-color`, `$highlight-color` etc.),
 maintenir deux versions de chaque variable est vite devenu ennuyeux. Cela signifie également
-deux fois plus de travail avec des choses comme rechercher et remplacer.
+deux fois plus de travail avec des choses comme "rechercher et remplacer".
 
-Dans un souci de cohérence, toujours nommer les classes et les variables dans les paramètres régionaux
+Dans un souci de cohérence, nommez toujours vos classes et vos variables dans les paramètres régionaux
 de la langue que vous utilisez.
+
+Vous pouvez aussi vous mettre d'accord avec votre équipe de développement pour n'utiliser que de l'anglais pour vos projets. Cela vous permettra d'améliorer votre maîtrise de la langue de Shakespeare.
 
 ## Commentaires
 
@@ -344,66 +341,68 @@ J'utilise un style de commentaire docBlock où la taille est limitée à 80 cara
      * Ceci est un commentaire de style DocBlock
      *
      * Ceci est une description plus détaillée
-     * detail. We limit these lines to a maximum of 80 characters in length.
+     * Nous limitons ces lignes pour un maximum de 80 caractères.
      *
-     * We can have markup in the comments, and are encouraged to do so:
+     * Nous pouvons avoir des balises dans les commentaires :
      *
        <div class=foo>
            <p>Lorem</p>
        </div>
      *
-     * We do not prefix lines of code with an asterisk as to do so would inhibit
-     * copy and paste.
+     * Nous n'avons pas de préfixe avec une étoile pour faciliter le
+     * copier-coller.
      */
 
-You should document and comment our code as much as you possibly can, what may
-seem or feel transparent and self explanatory to you may not be to another dev.
-Write a chunk of code then write about it.
+Vous devez documenter et commenter notre code autant que vous le pouvez, quoi qu'il arrive.
+Cela peut sembler trop transparent ou explicite pour vous mais peut-être pas pour un autre dev.
+Chaque nouveau morceau de code doit-être documenté.
 
 ### Commentaires sous stéroïdes
 
-There are a number of more advanced techniques you can employ with regards
-comments, namely:
+Il ya un certain nombre de techniques plus avancées que vous pouvez employer en ce qui concerne
+les commentaires, à savoir :
 
-* Quasi-qualified selectors
-* Tagging code
-* Object/extension pointers
+* Les sélecteurs spécifiques
+* Le codage des balises
+* l'association des objets
 
 #### Sélecteurs spécifiques
 
-You should never qualify your selectors; that is to say, we should never write
-`ul.nav{}` if you can just have `.nav`. Qualifying selectors decreases selector
-performance, inhibits the potential for reusing a class on a different type of
-element and it increases the selector’s specificity. These are all things that
-should be avoided at all costs.
+Vous ne devriez jamais qualifiez vos sélecteurs, c'est-à-dire que nous ne devrions jamais écrire
+`ul.nav{}` si vous pouvez juste avoir `.nav`. Qulaifier vos sélecteurs diminue leur
+rendement, inhibe le potentiel de réutilisation d'un objet sur un autre type d'
+élément et augmente la spécificité du sélecteur. Ce sont toutes des choses qui
+doivent être évitée à tout prix.
 
-However, sometimes it is useful to communicate to the next developer(s) where
-you intend a class to be used. Let’s take `.product-page` for example; this
-class sounds as though it would be used on a high-level container, perhaps the
-`html` or `body` element, but with `.product-page` alone it is impossible to
-tell.
+Cependant, il est parfois utile de communiquer à d'autre(s) développeur(s) où
+vous avez l'intention d'utiliser une classe. Prenons `.product-page` pour exemple; cette
+classe sonne comme si elle serait utilisée sur un conteneur de haut niveau, peut-être avec
+`html` ou `body`, mais seulement avec `.product-page` il est impossible de le
+savoir.
 
-By quasi-qualifying this selector (i.e. commenting out the leading type
-selector) we can communicate where we wish to have this class applied, thus:
+Par quasi-qualification de ce sélecteur (autrement dit en commentant le sélecteur de premier plan),
+nous pouvons communiquer nos intentions pour cette classe :
 
     /*html*/.product-page{}
 
 We can now see exactly where to apply this class but with none of the
 specificity or non-reusability drawbacks.
 
-Other examples might be:
+Nous pouvons maintenant voir exactement où s'applique cette classe, sans avoir les inconvénients de la
+la spécificité ou de la non-réutilisation.
+
+D'autres exemples pourraient être: :
 
     /*ol*/.breadcrumb{}
     /*p*/.intro{}
     /*ul*/.image-thumbs{}
 
-Here we can see where we intend each of these classes to be applied without
-actually ever impacting the specificity of the selectors.
+Dans ces cas, nous savons le contexte d'utilisation de ces classes sans jamais impacter la spécificité des selecteurs
 
 #### Code des balises
 
-If you write a new component then leave some tags pertaining to its function in
-a comment above it, for example:
+Si vous écrivez un nouveau composant, laissez certaines balises relatives à son utilisation dans
+un commentaire ci-dessus, par exemple:
 
     /**
      * ^navigation ^lists
@@ -415,9 +414,9 @@ a comment above it, for example:
      */
     .matrix{}
 
-These tags allow other developers to find snippets of code by searching for
-function; if a developer needs to work with lists they can run a find for
-`^lists` and find the `.nav` and `.matrix` objects (and possibly more).
+Ces balises permettent à d'autres développeurs de trouver des bouts de code en recherchant
+une fonction, si un développeur a besoin pour travailler avec des listes ils peuvent rechercher
+`^lists` et trouver les objets associés `.nav` et `.matrix` (et probablement plus).
 
 #### Association des objets
 
@@ -427,6 +426,11 @@ extension)) that are very closely related, but that live in very different
 places. In order to establish a concrete link between the object and its
 extension with use <i>object/extension pointers</i>. These are simply comments
 which work thus:
+
+Lorsque l'on travaille d'une manière orientée objet, vous aurez souvent deux morceaux de CSS
+(l'une étant le squelette (l'objet) et l'autre étant la peau (l'
+extension)) qui sont très étroitement liés, mais qui vivent dans des endroits très différent.
+Afin d'établir un lien béton entre l'objet et son extension de l'utilisation objet / extension pointeurs <i> </ i>. Ce sont simplement des commentaires qui oeuvrent ainsi:
 
 In your base stylesheet:
 
