@@ -9,8 +9,9 @@
 
 ---
 
-En travaillant sur de grands projets d'envergure fonctionnant avec des dizaines de développeurs, il est
-important que nous travaillions tous de façon unifiée avec pour objectif de :
+En travaillant sur de grands projets d'envergure fonctionnant avec des dizaines
+de développeurs, il est important que nous travaillions tous de façon unifiée
+avec pour objectif de :
 
 * Garder les feuilles de style maintenables
 * Garder le code transparent et lisible
@@ -18,8 +19,10 @@ important que nous travaillions tous de façon unifiée avec pour objectif de :
 
 Il existe plusieures techniques que nous devons employer pour satisfaire ces objectifs.
 
-La première partie de ce document traitera de la syntaxe, du formatage et de la taxonomie CSS
-La deuxième partie traitera de l'approche, l'état d'esprit et l'attitude à avoir pour écrire et architecturer du CSS.
+La première partie de ce document traitera de la syntaxe, du formatage et de la
+taxonomie CSS.
+La deuxième partie traitera de l'approche, l'état d'esprit et l'attitude à avoir
+pour écrire et architecturer du CSS.
 Passionnant, hein?
 
 ## Contenu
@@ -420,56 +423,54 @@ une fonction, si un développeur a besoin pour travailler avec des listes ils pe
 
 #### Association des objets
 
-When working in an object oriented manner you will often have two chunks of CSS
-(one being the skeleton (the object) and the other being the skin (the
-extension)) that are very closely related, but that live in very different
-places. In order to establish a concrete link between the object and its
-extension with use <i>object/extension pointers</i>. These are simply comments
-which work thus:
+Lorsque l'on travaille d'une manière orientée objet, vous aurez souvent deux
+morceaux de CSS (l'un étant le squelette (l'objet) et l'autre étant la peau
+(l'extension)) qui sont très étroitement liés, mais qui vivent dans des endroits
+très différent.
+Afin d'établir un lien béton entre l'objet et son extension nous utiliserons des
+<i>pointeurs objet / extension</i>. Ce sont simplement des commentaires comme ceci :
 
-Lorsque l'on travaille d'une manière orientée objet, vous aurez souvent deux morceaux de CSS
-(l'une étant le squelette (l'objet) et l'autre étant la peau (l'
-extension)) qui sont très étroitement liés, mais qui vivent dans des endroits très différent.
-Afin d'établir un lien béton entre l'objet et son extension de l'utilisation objet / extension pointeurs <i> </ i>. Ce sont simplement des commentaires qui oeuvrent ainsi:
-
-In your base stylesheet:
+Dans votre feuille de style de base :
 
     /**
      * Extend `.foo` in theme.css
      */
      .foo{}
 
-In your theme stylesheet:
+Dans votre feuille de style de theme :
 
     /**
      * Extends `.foo` in base.css
      */
      .bar{}
 
-Here we have established a concrete relationship between two very separate
-pieces of code.
+Ici, nous avons établi une relation concrète entre deux morceaux de code très distincts.
 
 ---
 
 ## Ecrire du CSS
 
-The previous section dealt with how we structure and form our CSS; they were
-very quantifiable rules. The next section is a little more theoretical and deals
-with our attitude and approach.
+La section précédente explorait la façon dont nous structurons et formons notre
+CSS; ces différentes règles sont très quantifiables. La section suivante est un
+peu plus théorique et traite d'attitude et d'approche à adopter.
 
 ## Construire de nouveau composants
 
-When building a new component write markup **before** CSS. This means you can
-visually see which CSS properties are naturally inherited and thus avoid
-reapplying redundant styles.
+Lors de la construction d'un nouveau composant créez votre balisage HTML **avant**
+votre CSS. Cela signifie que vous pouvez voir visuellement les propriétés CSS qui
+héritent naturellement et ainsi éviter de réappliquer des styles redondants.
 
 By writing markup first you can focus on data, content and semantics and then
 apply only the relevant classes and CSS _afterwards_.
 
+En écrivant d'abord vos balises, vous pouvez vous concentrer sur les données, le
+contenu et la sémantique, puis appliquer uniquement les classes appropriées et
+votre CSS _en dernier_.
+
 ## CSSOO
 
-I work in an OOCSS manner; I split components into structure (objects) and
-skin (extensions). As an **analogy** (note, not example) take the following:
+Je travaille d'une manière CSSOO, je sépare les composants en structure (objets) et
+peau (extensions). L'**analogie** suivante peut correspondre :
 
     .room{}
 
@@ -477,45 +478,50 @@ skin (extensions). As an **analogy** (note, not example) take the following:
     .room--bedroom{}
     .room--bathroom{}
 
-We have several types of room in a house, but they all share similar traits;
-they all have floors, ceilings, walls and doors. We can share this information
-in an abstracted `.room{}` class. However we have specific types of room that
-are different from the others; a kitchen might have a tiled floor and a bedroom
-might have carpets, a bathroom might not have a window but a bedroom most likely
-will, each room likely has different coloured walls. OOCSS teaches us to
-abstract the shared styles out into a base object and then _extend_ this
-information with more specific classes to add the unique treatment(s).
+Nous avons plusieurs types de pièces dans une maison, mais elles partagent toutes
+des caractéristiques semblables; elles ont toutes un plancher, un plafond, des murs
+et des portes. Nous pouvons partager cette information dans une classe abstraite
+`.room{}`. Cependant, nous avons des types de pièces spécifiques qui sont différentes
+des autres; une cuisine pourrait avoir un sol carrelé et une pièce pourrait avoir
+des tapis, une salle de bains pourrait ne pas avoir une fenêtre, mais une chambre
+très probablement un grand nombre, chaque pièce a probablement différents murs
+colorés. Le CSS Orienté Objet nous apprends à résumer les styles. Il faut les
+répartir dans un objet de base, puis _étendre_ ces informations avec des classes
+plus spécifiques pour ajouter le traitement unique.
 
-So, instead of building dozens of unique components, try and spot repeated
-design patterns across them all and abstract them out into reusable classes;
-build these skeletons as base ‘objects’ and then peg classes onto these to
-extend their styling for more unique circumstances.
+Donc, au lieu de construire des dizaines de composants uniques, essayez de repérer
+les modèles de conception qui se répètent. Abstracitsez-les en classes réutilisables;
+Construirez ces squelettes comme des «objets» base, puis ajoutez vos classes de
+style en circonstance pour les rendres uniques.
 
-If you have to build a new component split it into structure and skin; build the
-structure of the component using very generic classes so that we can reuse that
-construct and then use more specific classes to skin it up and add design
-treatments.
+Si vous avez à construire un nouveau composant, scindez le en structure et en peau;
+Construisez la structure du composant en utilisant des classes très génériques
+afin que nous puissions réutiliser ces morceaux et utiliser des classes plus
+spécifiques pour la peau en y ajoutant un traitement du design.
 
 ## Mise en page
 
-All components you build should be left totally free of widths; they should
-always remain fluid and their widths should be governed by a parent/grid system.
+Tous les composants que vous créez doivent être laissés totalement libres de largeurs,
+ils doivent toujours rester fluide et leurs largeurs doivent être régies par un
+système de parent / de grille.
 
-Heights should **never** be be applied to elements. Heights should only be
-applied to things which had dimensions _before_ they entered the site (i.e.
-images and sprites). Never ever set heights on `p`s, `ul`s, `div`s, anything.
-You can often achieve the desired effect with `line-height` which is far more
-flexible.
+Les hauteurs ne doivent **jamais** être appliquées aux éléments. Les hauteurs ne
+devraient être appliqué à des choses qui avaient dimensions _avant_ leur intégration
+sur le site (autremnt dit les images et des sprites). Ne jamais mettre hauteurs
+sur les balises `p`, `ul`, `div`, ou n'importe quoi d'autre. Vous pouvez souvent
+obtenir l'effet désiré avec `line-height` qui est beaucoup plus souple.
 
-Grid systems should be thought of as shelves. They contain content but are not
-content in themselves. You put up your shelves then fill them with your stuff.
-By setting up our grids separately to our components you can move components
-around a lot more easily than if they had dimensions applied to them; this makes
-our front-ends a lot more adaptable and quick to work with.
+Les systèmes de grilles devraient être considérés comme des étagères. Ils contiennent
+du contenu, mais ne sont pas du contenu eux-mêmes. Vous mettez en place vos étagères
+puis les remplissez avec vos objets.
+En mettant en place nos grilles séparément de nos composants, vous pourrez les
+déplacer beaucoup plus facilement que s'ils avaient des dimensions associées, ce
+qui rend notre front-end beaucoup plus souple et rapide à utiliser.
 
-You should never apply any styles to a grid item, they are for layout purposes
-only. Apply styling to content _inside_ a grid item. Never, under _any_
-circumstances, apply box-model properties to a grid item.
+Vous ne devriez jamais appliquer du style à un élément de la grille, ces derniers
+s'utilisent uniquement pour notre mise en page. Appliquez un style au contenu
+_à l'intérieur_ d'un élément de grille. Ne jamais, en _aucune_ circonstance,
+appliquer des propriétés de modèle de boîte (box-model) à un élément de grille.
 
 ## Taille des interfaces
 
