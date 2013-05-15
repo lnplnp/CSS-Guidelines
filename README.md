@@ -27,34 +27,34 @@ Passionnant, hein?
 
 ## Contenu
 
-* [Anatomie d'un document CSS](#css-document-anatomy)
-  * [Généralités](#general)
-  * [Un seul fichier ou plusieurs fichiers ?](#one-file-vs-many-files)
-  * [Table des matières](#table-of-contents)
-  * [Titre des sections](#section-titles)
-* [Ordre des sources](#source-order)
-* [Anatomie d'une règle](#anatomy-of-rulesets)
-* [Classes en HTML](#html-class)
-* [Convention de nomage](#naming-conventions)
-  * [Ancres javascript](#js-hooks)
-  * [Localisation](#internationalisation)
-* [Commentaires](#comments)
-  * [Commentaires sous stéroïdes](#comments-on-steroids)
-    * [Sélecteurs spécifiques](#quasi-qualified-selectors)
-    * [Code des balises](#tagging-code)
-    * [Association des objets](#objectextension-pointers)
-* [Ecrire du CSS](#writing-css)
-* [Construire de nouveau composants](#building-new-components)
-* [CSSOO](#oocss)
-* [Mise en page](#layout)
-* [Taille des interfaces](#sizing-uis)
-  * [Taille des polices](#font-sizing)
-* [Sténographie](#shorthand)
+* [Anatomie d'un document CSS](#anatomie-dun-document-css)
+  * [Généralités](#generalites)
+  * [Un seul fichier ou plusieurs fichiers ?](#un-seul-fichier-ou-plusieurs-fichiers)
+  * [Table des matières](#table-des-matieres)
+  * [Titre des sections](#titre-des-sections)
+* [Ordre des sources](#ordre-des-sources)
+* [Anatomie d'une règle](#anatomie-dune-regle)
+* [Classes en HTML](#classes-en-html)
+* [Convention de nomage](#convention-de-nomage)
+  * [Ancres javascript](#ancres-javascript)
+  * [Localisation](#localisation)
+* [Commentaires](#commentaires)
+  * [Commentaires sous stéroïdes](#commentaires-sous-steroides)
+    * [Sélecteurs spécifiques](#selecteurs-specifiques)
+    * [Code des balises](#code-des-balises)
+    * [Association des objets](#Association-des-objets)
+* [Ecrire du CSS](#ecrire-du-css)
+* [Construire de nouveau composants](#construire-de-nouveau-composants)
+* [CSSOO](#cssoo)
+* [Mise en page](#mise-en-page)
+* [Taille des interfaces](#taille-des-interfaces)
+  * [Taille des polices](#taille-des-polices)
+* [Sténographie](#stenographie)
 * [IDs](#ids)
-* [Sélecteurs](#selectors)
-  * [Qualification des Sélecteurs](#over-qualified-selectors)
-  * [Performance des sélecteurs](#selector-performance)
-* [CSS selector intent](#css-selector-intent)
+* [Sélecteurs](#selecteurs)
+  * [Qualification des Sélecteurs](#qualification-des-selecteurs)
+  * [Performance des sélecteurs](#performance-des-selecteurs)
+* [CSS selector intent](#css-selecteurs-intent)
 * [`!important`](#important)
 * [Nombres magiques et absolu](#magic-numbers-and-absolutes)
 * [Styles conditionnel](#conditional-stylesheets)
@@ -506,10 +506,10 @@ ils doivent toujours rester fluide et leurs largeurs doivent être régies par u
 système de parent / de grille.
 
 Les hauteurs ne doivent **jamais** être appliquées aux éléments. Les hauteurs ne
-devraient être appliqué à des choses qui avaient dimensions _avant_ leur intégration
-sur le site (autremnt dit les images et des sprites). Ne jamais mettre hauteurs
-sur les balises `p`, `ul`, `div`, ou n'importe quoi d'autre. Vous pouvez souvent
-obtenir l'effet désiré avec `line-height` qui est beaucoup plus souple.
+devraient être appliqué qu'à des éléments qui avaient dimensions _avant_ leur
+intégration sur le site (autremnt dit les images et des sprites). Ne jamais mettre
+de hauteurs sur les balises `p`, `ul`, `div`, ou n'importe quoi d'autre.
+Vous pouvez souvent obtenir l'effet désiré avec `line-height` qui est beaucoup plus souple.
 
 Les systèmes de grilles devraient être considérés comme des étagères. Ils contiennent
 du contenu, mais ne sont pas du contenu eux-mêmes. Vous mettez en place vos étagères
@@ -525,33 +525,34 @@ appliquer des propriétés de modèle de boîte (box-model) à un élément de g
 
 ## Taille des interfaces
 
-I use a combination of methods for sizing UIs. Percentages, pixels, ems, rems
-and nothing at all.
+J'utilise une combinaison de différentes méthodes pour les gérer les tailles d'interfaces.
+Les pourcentages, les pixels, `ems`, `rems` et aucune propriété.
 
-Grid systems should, ideally, be set in percentages. Because I use grid systems
-to govern widths of columns and pages, I can leave components totally free of
-any dimensions (as discussed above).
+Les systèmes de grilles devraient, idéalement, être mis en pourcentage. Parce que
+j'utilise les systèmes de grille pour gouverner la largeur des colonnes et des pages,
+je peux laisser les objets totalement libres de dimensions (voir ci-dessus).
 
-Font sizes I set in rems with a pixel fallback. This gives the accessibility
-benefits of ems with the confidence of pixels. Here is a handy Sass mixin to
-work out a rem and pixel fallback for you (assuming you set your base font
-size in a variable somewhere):
+Les tailles de police en `rems` sont sécurisées avec une taille en pixel.
+Cette méthode conserve les avantages de l'accessibilité donnée par les `em` et fixe
+une taille en `px` pour les vieux navigateurs. Voici une mixin Sass permettant la
+mise en oeuvre de ce concept (en supposant que vous définissez votre taille de police
+de base quelque part) :
 
     @mixin font-size($font-size){
         font-size:$font-size +px;
         font-size:$font-size / $base-font-size +rem;
     }
 
-I only use pixels for items whose dimensions were defined before the came into
-the site. This includes things like images and sprites whose dimensions are
-inherently set absolutely in pixels.
+J'utilise seulement les pixels pour les objets dont les dimensions sont fixées.
+Cela inclut des choses comme les images et les sprites dont les dimensions sont
+en pixels.
 
 ### Taille des polices
 
-I define a series of classes akin to a grid system for sizing fonts. These
-classes can be used to style type in a double stranded heading hierarchy. For a
-full explanation of how this works please refer to my article
-[Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css)
+Je définis une série de classes qui s'apparentent à un système de grille pour le
+dimensionnement des polices. Ces classes peuvent être utilisées pour respecter une
+hiérarchie des styles. Pour une une explication complète veuillez vous référer à
+cet article[Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css)
 
 ## Sténographie
 
