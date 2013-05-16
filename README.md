@@ -49,7 +49,7 @@ Passionnant, hein?
 * [Mise en page](#mise-en-page)
 * [Taille des interfaces](#taille-des-interfaces)
   * [Taille des polices](#taille-des-polices)
-* [Sténographie](#stenographie)
+* [Raccourcis](#raccourcis)
 * [IDs](#ids)
 * [Sélecteurs](#selecteurs)
   * [Qualification des Sélecteurs](#qualification-des-selecteurs)
@@ -554,64 +554,67 @@ dimensionnement des polices. Ces classes peuvent être utilisées pour respecter
 hiérarchie des styles. Pour une une explication complète veuillez vous référer à
 cet article[Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css)
 
-## Sténographie
+## Raccourcis
 
-**Shorthand CSS needs to be used with caution.**
+**Les raccourcis CSS doivent être utilisés avec prudence.**
 
-It might be tempting to use declarations like `background:red;` but in doing so
-what you are actually saying is ‘I want no image to scroll, aligned top-left,
-repeating X and Y, and a background colour of red’. Nine times out of ten this
-won’t cause any issues but that one time it does is annoying enough to warrant
-not using such shorthand. Instead use `background-color:red;`.
+Il peut être tentant d'utiliser des déclarations comme `background: red;` mais
+en faisant cela ce que vous êtes en train de coder est : « Je ne veux pas d'image
+de fond qui défile, aligné en haut à gauche, répété en X et Y, avec une couleur
+de fond de rouge ». Neuf fois sur dix, cela n'entraînera pas de problèmes, mais
+dans ce cas-là il est justifié de ne pas utiliser de raccourci.
+En remplacement utilisez `background-color: red;`.
 
-Similarly, declarations like `margin:0;` are nice and short, but
-**be explicit**. If you actually only really want to affect the margin on
-the bottom of an element then it is more appropriate to use `margin-bottom:0;`.
+De même, les déclarations comme `margin: 0;` sont agréables et courtes, mais
+**restez explicite**. Si vous voulez réellement n'affecter la marge que sur
+le bas d'un élément, il est plus approprié d'utiliser `margin-bottom: 0;`.
 
-Be explicit in which properties you set and take care to not inadvertently unset
-others with shorthand. E.g. if you only want to remove the bottom margin on an
-element then there is no sense in setting all margins to zero with `margin:0;`.
+Soyez explicite dans les propriétés que vous définissez et prenez soin de ne pas,
+par inadvertance, en écraser d'autres avec un raccourci. Par exemple si vous ne
+voulez pas supprimer la marge inférieure sur un élément alors il n'y a aucun sens
+à la mise à zéro toutes les marges avec `margin: 0;`.
 
-Shorthand is good, but easily misused.
+Les raccourcis sont une bonne chose mais ils sont trop facilement usurpés.
 
 ## IDs
 
-A quick note on IDs in CSS before we dive into selectors in general.
+Une note rapide sur les identifiants en CSS avant de nous plonger dans les sélecteurs
+en général.
 
-**NEVER use IDs in CSS.**
+**Ne JAMAIS utiliser des ID en CSS.**
 
-They can be used in your markup for JS and fragment identifiers but use only
-classes for styling. You don’t want to see a single ID in any stylesheets!
+Ils peuvent être utilisés dans votre balisage pour de l'idendification en JS, mais
+pour styler vos éléments utilisez seulement des classes.
+Vous ne voulez pas voir un seul identifiant dans tous vos styles !
 
-Classes come with the benefit of being reusable (even if we don’t want to, we
-can) and they have a nice, low specificity. Specificity is one of the quickest
-ways to run into difficulties in projects and keeping it low at all times is
-imperative. An ID is **255** times more specific than a class, so never ever use
-them in CSS _ever_.
+Les classes ont l'avantage d'être réutilisable (même si nous ne voulons pas, nous
+pouvons) et ils ont une belle et faible spécificité. La spécificité est l'une des
+façons les plus rapides de rencontrer des difficultés dans les projets et la maintenir
+à un faible niveau en tout temps est impératif. Un ID est **255** fois plus précis
+qu'une classe, donc ne les utilisez _jamais_ en CSS _jamais_.
 
 ## Sélecteurs
 
-Keep selectors short, efficient and portable.
+Gardez les sélecteurs courts, efficaces et portables.
 
-Heavily location-based selectors are bad for a number of reasons. For example,
-take `.sidebar h3 span{}`. This selector is too location-based and thus we
-cannot move that `span` outside of a `h3` outside of `.sidebar` and maintain
-styling.
+Les sélecteurs basés sur la position sont mauvais pour un certain nombre de raisons.
+Par exemple, prenez `.sidebar h3 span{}`. Ce sélecteur est trop basé sur la position
+et donc ne nous permet pas de déplacer un `span` en dehors d'un `h3` sans casser le style.
 
-Selectors which are too long also introduce performance issues; the more checks
-in a selector (e.g. `.sidebar h3 span` has three checks, `.content ul p a` has
-four), the more work the browser has to do.
+Les sélecteurs trop longs introduisent également des problèmes de performance;
+plus il y a de niveau dans un sélecteur (par exemple `.sidebar h3 span` a trois niveaux,
+`.content ul p a` en a quatre), plus le navigateur a de traitement à effectuer.
 
-Make sure styles aren’t dependent on location where possible, and make sure
-selectors are nice and short.
+Assurez-vous que les styles soient idépendant de la position lorsque cela est possible,
+et assurez-vous qu'ils soient simples et courts.
 
-Selectors as a whole should be kept short (e.g. one class deep) but the class
-names themselves should be as long as they need to be. A class of `.user-avatar`
-is far nicer than `.usr-avt`.
+Les sélecteurs doivent être courts (par exemple, un niveau d'une classe de profondeur)
+mais les noms de classe eux-mêmes devraient être aussi longs que possible. Une
+classe `.user-avatar` est bien plus agréable que `.usr-avt`.
 
-**Remember:** classes are neither semantic or insemantic; they are sensible or
-insensible! Stop stressing about ‘semantic’ class names and pick something
-sensible and futureproof.
+**Rappelez-vous :** les classes ne sont ni sémantique ni non-sémantiques !
+Arrêter de stresser sur les noms de classe « sémantique » et choisissez quelque
+chose de simple et à l'épreuve du temps.
 
 ### Qualification des Sélecteurs
 
