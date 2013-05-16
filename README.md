@@ -634,40 +634,41 @@ down to just `.nav a{}`.
 
 ### Performance des sélecteurs
 
-Whilst it is true that browsers will only ever keep getting faster at rendering
-CSS, efficiency is something you could do to keep an eye on. Short, unnested
-selectors, not using the universal (`*{}`) selector as the key selector, and
-avoiding more complex CSS3 selectors should help circumvent these problems.
+S'il est vrai que les navigateurs ne pourront pas continuer à interpréter encore 
+plus rapidement le CSS, l'efficacité est quelque chose que vous pourriez garder 
+en tête. En résumé, évitez les sélecteurs non imbriquées, l'universel (`*{}`), 
+ainsi que les sélecteurs CSS3 plus complexes devrait permettre de contourner ces 
+problèmes.
 
-## CSS selector intent
+## L'intention de sélection
 
-Instead of using selectors to drill down the DOM to an element, it is often best
-to put a class on the element you explicitly want to style. Let’s take a
-specific example with a selector like `.header ul{}`…
+Au lieu d'utiliser les sélecteurs pour cibler un élément du DOM, il est souvent 
+préférable de mettre une classe sur l'élément que vous voulez explicitement styler.
+Prenons l'exemple précis d'un sélecteur comme `.header ul{}` ...
 
-Let’s imagine that `ul` is indeed the main navigation for our website. It lives
-in the header as you might expect and is currently the only `ul` in there;
-`.header ul{}` will work, but it’s not ideal or advisable. It’s not very future
-proof and certainly not explicit enough. As soon as we add another `ul` to that
-header it will adopt the styling of our main nav and the the chances are it
-won’t want to. This means we either have to refactor a lot of code _or_ undo a
-lot of styling on subsequent `ul`s in that `.header` to remove the effects of
-the far reaching selector.
+Imaginons que `ul` est en effet le menu principal de notre site Web. il vit dans 
+l'en-tête et vous pensez que se sera le seul `ul` en ces lieux;
+`.header ul{}` fonctionnera, mais ce n'est pas idéal ou souhaitable. Ce n'est pas 
+à l'épreuve du temps et certainement pas assez explicite. Dès que nous ajouterons 
+un autre `ul` pour cet en-tête il va adopter le style de notre navigation principale. 
+Il y a beaucoup de chances que ce ne soit pas voulu. Cela signifie que nous devons 
+soit remanier une grande quantité de code _ou_ annuler beaucoups de style sur les 
+`ul`s dans ce `.header` pour supprimer les effets de la sélection globale.
 
-Your selector’s intent must match that of your reason for styling something;
-ask yourself **‘am I selecting this because it’s a `ul` inside of `.header` or
-because it is my site’s main nav?’**. The answer to this will determine your
-selector.
+L'intention de votre sélecteur doit correspondre à la raison de votre style;
+Demandez-vous **'Est-ce-que je sélectionne cela car c'est un `ul` à l'intérieur 
+de `.header` ou parce que c'est la navigation principale de mon site ?'**.
+La réponse à cette question permettra de déterminer votre sélecteur.
 
-Make sure your key selector is never an element/type selector or
-object/abstraction class. You never really want to see selectors like
-`.sidebar ul{}` or `.footer .media{}` in our theme stylesheets.
+Assurez-vous que votre sélecteur clé n'est jamais un élément / type ou
+une classe abstraite. Vous ne voulez pas vraiment voir comme sélecteurs
+`.sidebar ul{}` ou `.footer .media{}` dans votre feuille de theme.
 
-Be explicit; target the element you want to affect, not its parent. Never assume
-that markup won’t change. **Write selectors that target what you want, not what
-happens to be there already.**
+Soyez explicites; ciblez l'élément que vous voulez modifier, pas son parent. Ne 
+supposez jamais que le balisage ne changera pas. **Codez des sélecteurs qui ciblent 
+ce que vous voulez, pas ce qui se trouve être déjà là.**
 
-For a full write up please see my article
+Vous pouvez consulter un article complet sur la question
 [Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/)
 
 ## `!important`
