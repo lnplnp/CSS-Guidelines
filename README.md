@@ -5,7 +5,7 @@
 ## Traductions
 
 * [Russian/русский](https://github.com/matmuchrapna/CSS-Guidelines/blob/master/README%20Russian.md)
-* [French/Français](https://github.com/flexbox)
+* [French/Français](https://github.com/flexbox/CSS-Guidelines/blob/master/README.md)
 
 ---
 
@@ -388,9 +388,6 @@ nous pouvons communiquer nos intentions pour cette classe :
 
     /*html*/.product-page{}
 
-We can now see exactly where to apply this class but with none of the
-specificity or non-reusability drawbacks.
-
 Nous pouvons maintenant voir exactement où s'applique cette classe, sans avoir les inconvénients de la
 la spécificité ou de la non-réutilisation.
 
@@ -459,9 +456,6 @@ peu plus théorique et traite d'attitude et d'approche à adopter.
 Lors de la construction d'un nouveau composant créez votre balisage HTML **avant**
 votre CSS. Cela signifie que vous pouvez voir visuellement les propriétés CSS qui
 héritent naturellement et ainsi éviter de réappliquer des styles redondants.
-
-By writing markup first you can focus on data, content and semantics and then
-apply only the relevant classes and CSS _afterwards_.
 
 En écrivant d'abord vos balises, vous pouvez vous concentrer sur les données, le
 contenu et la sémantique, puis appliquer uniquement les classes appropriées et
@@ -614,11 +608,11 @@ classe `.user-avatar` est bien plus agréable que `.usr-avt`.
 
 **Rappelez-vous :** les classes ne sont ni sémantique ni non-sémantiques !
 Arrêter de stresser sur les noms de classe « sémantique » et choisissez quelque
-chose de simple et à l'épreuve du temps.
+chose de simple à l'épreuve du temps.
 
-### Qualification des Sélecteurs
+### Chaînes de sélecteurs
 
-As discussed above, qualified selectors are bad news.
+Comme indiqué plus haut, les chaînes de sélecteur sont de mauvaises nouvelles.
 
 An over-qualified selector is one like `div.promo`. You could probably get the
 same effect from just using `.promo`. Of course sometimes you will _want_ to
