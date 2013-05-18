@@ -610,21 +610,22 @@ classe `.user-avatar` est bien plus agréable que `.usr-avt`.
 Arrêter de stresser sur les noms de classe « sémantique » et choisissez quelque
 chose de simple à l'épreuve du temps.
 
-### Chaînes de sélecteurs
+### Surqualification des sélecteurs
 
 Comme indiqué plus haut, les chaînes de sélecteur sont de mauvaises nouvelles.
 
-An over-qualified selector is one like `div.promo`. You could probably get the
-same effect from just using `.promo`. Of course sometimes you will _want_ to
-qualify a class with an element (e.g. if you have a generic `.error` class that
-needs to look different when applied to different elements (e.g.
-`.error{ color:red; }` `div.error{ padding:14px; }`)), but generally avoid it
-where possible.
+Une surqualification des selecteurs ressemble à `div.promo`. Vous obtiendrez 
+suremment le même résultat en utilisant simplement `.promo`. Bien sur dans certains 
+cas vous _voulez_ associer une classe avec un élément. Exemple : vous avez 
+une classe générique `.error` qui a besoin d'avoir un aspect différent en fonction 
+de son éléments (par exemple,
+`.error {color: red;}` et `div.error {padding: 14px;}`). Généralement essayez 
+d'éviter lorsque cela est possible.
 
-Another example of an over-qualified selector might be `ul.nav li a{}`. As
-above, we can instantly drop the `ul` and because we know `.nav` is a list, we
-therefore know that any `a` _must_ be in an `li`, so we can get `ul.nav li a{}`
-down to just `.nav a{}`.
+Un autre exemple d'un sélecteur surqualifiés pourrait être `ul.nav li a {}`. Comme
+ci-dessus, nous pouvons supprimer `ul` puisque nous savons que `.nav` est une liste, 
+il est aussi logique que `a` _doit_ être dans un `li`, donc nous mettre à la diète 
+`ul.nav li a {}` pour obtenir simplement `.nav a{}`.
 
 ### Performance des sélecteurs
 
@@ -667,66 +668,68 @@ Vous pouvez consulter un article complet sur la question
 
 ## `!important`
 
-It is okay to use `!important` on helper classes only. To add `!important`
-preemptively is fine, e.g. `.error{ color:red!important }`, as you know you will
-**always** want this rule to take precedence.
+Il est correct d'utiliser `!important` sur des classes d'assistance uniquement. 
+Vous pouvez aussi faire de la prévention en ajoutant `!important`
+dans le cas où vous savez que la règle sera **toujours ** prioritaire, par exemple 
+`.error {color: red !important;}`.
 
-Using `!important` reactively, e.g. to get yourself out of nasty specificity
-situations, is not advised. Rework your CSS and try to combat these issues by
-refactoring your selectors. Keeping your selectors short and avoiding IDs will
-help out here massively.
+Utiliser `!important` pour sortir d'une situation périlleuse, n'est pas conseillé. Retravaillez votre CSS et essayez de lutter contre ces problèmes en
+[réusinant](http://fr.wikipedia.org/wiki/R%C3%A9usinage_de_code) vos sélecteurs. Garder vos sélecteurs courts en évitant les IDS vous 
+aidera énormément.
 
 ## Nombres magiques et absolus
 
-A magic number is a number which is used because ‘it just works’. These are bad
-because they rarely work for any real reason and are not usually very
-futureproof or flexible/forgiving. They tend to fix symptoms and not problems.
+Un nombre magique est un nombre qui est utilisé parce que « ça fonctionne ». Ceux-ci 
+sont mauvais parce qu'ils travaillent rarement pour un motif réel et ne sont 
+généralement pas à l'épreuve du temps ou flexible. Ils ont tendance à fixer des 
+symptômes et non des problèmes.
 
-For example, using `.dropdown-nav li:hover ul{ top:37px; }` to move a dropdown
-to the bottom of the nav on hover is bad, as 37px is a magic number. 37px only
-works here because in this particular scenario the `.dropdown-nav` happens to be
-37px tall.
+Par exemple, utiliser `.dropdown-nav li:hover ul{ top:37px; }` pour déplacer une liste déroulante avec `:hover` est mauvais, puisque 37px est un nombre magique. 37px grâce à un coup de chance puisque `.dropdown-nav` arrive à être 37px de hauteur.
 
-Instead you should use `.dropdown-nav li:hover ul{ top:100%; }` which means no
-matter how tall the `.dropdown-nav` gets, the dropdown will always sit 100% from
-the top.
+Au lieu de cela, vous devez utiliser `.dropdown-nav li:hover ul{ top:100%; }`. 
+quelque soit la hauteur de `.dropdown-nav`, dans la liste déroulante aura toujours 
+100% de déplacement par rapport à la hauteur.
 
-Every time you hard code a number think twice; if you can avoid it by using
-keywords or ‘aliases’ (i.e. `top:100%` to mean ‘all the way from the top’)
-or&mdash;even better&mdash;no measurements at all then you probably should.
+Chaque fois que vous codez en dur un certain nombre réfléchissez-y à deux fois, 
+si vous pouvez l'éviter en utilisant de mots-clés ou «alias» (`top: 100%` signifie 
+«tout le chemin depuis le sommet») ou &mdash;encore mieux&mdash; pas de mesures 
+du tout, alors vous devriez probablement.
 
-Every hard-coded measurement you set is a commitment you might not necessarily
-want to keep.
+Chaque mesure codée en dur que vous définissez est un engagement que vous ne 
+pourriez pas nécessairement vouloir conserver.
 
 ## Styles conditionnel
 
-IE stylesheets can, by and large, be totally avoided. The only time an IE
-stylesheet may be required is to circumvent blatant lack of support (e.g. PNG
-fixes).
+Les feuilles de style IE peuvent, généralement, être totalement évitées. La seule 
+fois où une feuille de style IE peut être nécessaire est de contourner le manque 
+flagrant de fonctionnalité (Une correction des PNG par exemple).
 
-As a general rule, all layout and box-model rules can and _will_ work without an
-IE stylesheet if you refactor and rework your CSS. This means you never want to
-see `<!--[if IE 7]> element{ margin-left:-9px; } < ![endif]-->` or other such
-CSS that is clearly using arbitrary styling to just ‘make stuff work’.
+En règle générale, toutes les règles de mise en page et le modèle de boîte _devraient_
+fontionner sans feuille de style IE si vous réusinez et retravaillez votre CSS. Cela signifie que vous ne rencontrerez plus jamais `<!--[if IE 7]> element{ margin-left:-9px; } < ![endif]-->` ou un autre
+CSS clairement utilisé de façon arbitraire simplement « parce que ça fonctionne ».
 
 ## Débugage
 
-If you run into a CSS problem **take code away before you start adding more** in
-a bid to fix it. The problem exists in CSS that is already written, more CSS
-isn’t the right answer!
+Si vous rencontrez un problème CSS **relisez le code avant vous commencer à en 
+ajouter encore plus** dans l'espoir de le corriger. Le problème existe en CSS et 
+il est déjà écrit, ajouter plus de CSS n'est pas la bonne réponse !
 
-Delete chunks of markup and CSS until your problem goes away, then you can
-determine which part of the code the problem lies in.
+Supprimez vos balises HTML et votre CSS jusqu'à ce que votre problème disparaîsse, 
+ensuite vous pouvez déterminer quelle partie du code pose problème.
 
-It can be tempting to put an `overflow:hidden;` on something to hide the effects
-of a layout quirk, but overflow was probably never the problem; **fix the
-problem, not its symptoms.**
+Il peut être tentant de mettre `overflow: hidden;` pour cacher les effets
+d'une bizarrerie de mise en page, mais `overflow` n'a probablement jamais été le 
+problème; **fixez le problème, et non ses symptômes.**
 
 ## Préprocesseurs
 
 Sass is my preprocessor of choice. **Use it wisely.** Use Sass to make your CSS
 more powerful but avoid nesting like the plague! Nest only when it would
 actually be necessary in vanilla CSS, e.g.
+
+Sass est mon préprocesseur de choix. **Utilisez-le à bon escient.** Utiliser Sass 
+pour rendre votre CSS plus puissant, mais évitez la spécification comme la peste ! 
+Spécifiez seulement si c'est réellement nécessaire à votre CSS, par exemple
 
     .header{}
     .header .site-nav{}
@@ -736,6 +739,8 @@ actually be necessary in vanilla CSS, e.g.
 Would be wholly unnecessary in normal CSS, so the following would be **bad**
 Sass:
 
+Serait tout à fait inutile dans des conditions normales CSS, le SASS est **mauvais** :
+
     .header{
         .site-nav{
             li{
@@ -744,7 +749,7 @@ Sass:
         }
     }
 
-If you were to Sass this up you’d write it as:
+Si vous deviez mettre SASS en place vous coderiez :
 
     .header{}
     .site-nav{
