@@ -4,8 +4,8 @@
 
 ## Traductions
 
-* [Russian/русский](https://github.com/matmuchrapna/CSS-Guidelines/blob/master/README%20Russian.md)
-* [French/Français](https://github.com/flexbox/CSS-Guidelines/blob/master/README.md)
+* [русский](https://github.com/matmuchrapna/CSS-Guidelines/blob/master/README%20Russian.md)
+* [English](https://github.com/csswizardry/CSS-Guidelines)
 
 ---
 
@@ -28,21 +28,22 @@ Passionnant, hein?
 ## Contenu
 
 * [Anatomie d'un document CSS](#anatomie-dun-document-css)
-  * [Généralités](#generalites)
-  * [Un seul fichier ou plusieurs fichiers ?](#un-seul-fichier-ou-plusieurs-fichiers)
-  * [Table des matières](#table-des-matieres)
-  * [Titre des sections](#titre-des-sections)
+  * [Généralités](#gnralits)
+  * [Un seul fichier ou plusieurs fichiers ?](#un-seul-fichier-ou-plusieurs-fichiers-)
+  * [Table des matières](#table-des-matires)
+  * [Titre de section](#titres-de-section)
 * [Ordre des sources](#ordre-des-sources)
-* [Anatomie d'une règle](#anatomie-dune-regle)
+* [Anatomie d'une règle](#anatomie-dune-rgle)
 * [Classes en HTML](#classes-en-html)
-* [Convention de nomage](#convention-de-nomage)
+* [Convention de nomage](#convention-de-nommage)
+  * [Classes en HTML](#classes-en-html)
   * [Ancres javascript](#ancres-javascript)
   * [Localisation](#localisation)
 * [Commentaires](#commentaires)
-  * [Commentaires sous stéroïdes](#commentaires-sous-steroides)
-    * [Sélecteurs spécifiques](#selecteurs-specifiques)
+  * [Commentaires sous stéroïdes](#commentaires-sous-strodes)
+    * [Sélecteurs spécifiques](#slecteurs-spcifiques)
     * [Code des balises](#code-des-balises)
-    * [Association des objets](#Association-des-objets)
+    * [Association des objets](#association-des-objets)
 * [Ecrire du CSS](#ecrire-du-css)
 * [Construire de nouveau composants](#construire-de-nouveau-composants)
 * [CSSOO](#cssoo)
@@ -51,15 +52,15 @@ Passionnant, hein?
   * [Taille des polices](#taille-des-polices)
 * [Raccourcis](#raccourcis)
 * [IDs](#ids)
-* [Sélecteurs](#selecteurs)
-  * [Qualification des Sélecteurs](#qualification-des-selecteurs)
-  * [Performance des sélecteurs](#performance-des-selecteurs)
-* [CSS selector intent](#css-selecteurs-intent)
+* [Sélecteurs](#slecteurs)
+  * [Surqualification des sélecteurs](#surqualification-des-slecteurs)
+  * [Performance des sélecteurs](#performance-des-slecteurs)
+* [L'intention de sélection](#lintention-de-slection)
 * [`!important`](#important)
-* [Nombres magiques et absolu](#magic-numbers-and-absolutes)
-* [Styles conditionnel](#conditional-stylesheets)
-* [Débugage](#debugging)
-* [Préprocesseurs](#preprocessors)
+* [Nombres magiques et absolu](#nombres-magiques-et-absolus)
+* [Styles conditionnel](#styles-conditionnel)
+* [Débugage](#dbugage)
+* [Préprocesseurs](#prprocesseurs)
 
 ---
 
