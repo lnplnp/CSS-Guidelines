@@ -66,29 +66,33 @@ Passionnant, hein?
 
 ## Anatomie d'un document CSS
 
-Peu importe le document, il faut toujours essayer de garder un formatage commun. Cela signifie une cohérence des commentaires, de la syntaxe et des règles de nommage.
+Peu importe le document, il faut toujours essayer de garder un formatage commun. 
+Cela signifie une cohérence des commentaires, de la syntaxe et des règles de nommage.
 
 ### Généralités
 
-Limitez vos feuilles de style avec un maximum de 80 caractères de longeur lorsque cela est possible.
-Des exceptions peuvent être la syntaxe des dégradés ainsi que les URL dans les commentaires. Il n'y a rien que nous puissions faire à ce sujet.
+Limitez vos feuilles de style avec un maximum de 80 caractères de longeur lorsque 
+cela est possible. Des exceptions peuvent être la syntaxe des dégradés ainsi que 
+les URL dans les commentaires. Il n'y a rien que nous puissions faire à ce sujet.
 
-Concernant l'indentation je préfère 2 espaces au lieu des tabulations et écrire sur plusieures lignes CSS.
+Concernant l'indentation je préfère 2 espaces au lieu des tabulations et écrire 
+sur plusieures lignes CSS.
 
 ### Un seul fichier ou plusieurs fichiers ?
 
 Certaines personnes préfèrent travailler avec de simple fichiers volumineux.
 Cela fonctionne très bien pour les petits projets mais avec les directives suivantes
 vous aller très vite renconter des problèmes.
-Depuis l'arrivée de sass j'ai commencé à séparer mes feuilles de styles en petits fichiers.
-Cette méthode est aussi très bonne. Quelle que soit la méthode que vous choisissez, les règles suivantes et
-les lignes directrices s'appliquent. La seule différence notable est en ce qui concerne notre table des
-matières et nos titres de section. Lisez la suite pour plus d'explications ...
+Depuis l'arrivée de sass j'ai commencé à séparer mes feuilles de styles en petits 
+fichiers. Cette méthode est aussi très bonne. Quelle que soit la méthode que vous 
+choisissez, les règles suivantes et les lignes directrices s'appliquent. La seule 
+différence notable est en ce qui concerne notre table des matières et nos titres 
+de section. Lisez la suite pour plus d'explications ...
 
 ### Table des matières
 
-Au sommet des feuilles de style, je maintiens une table des matières qui détaillera les
-sections contenues dans le document, par exemple:
+Au sommet des feuilles de style, je maintiens une table des matières qui détaillera 
+les sections contenues dans le document, par exemple:
 
 
     /*------------------------------------*\
@@ -100,17 +104,18 @@ sections contenues dans le document, par exemple:
      * FONT................Les polices de caractère
      */
 
-Ceci va permettre au prochain développeur de savoir exactement ce qu'il va trouver dans
-ce fichier. Chaque élément de la table des matières correspond directement à un titre de section.
+Ceci va permettre au prochain développeur de savoir exactement ce qu'il va trouver 
+dans ce fichier. Chaque élément de la table des matières correspond directement 
+à un titre de section.
 
-Si vous travaillez sur une grande feuille de style, la section correspondante sera également
-dans ce fichier. Si vous travaillez sur plusieurs fichiers, chaque élément de la
-table des matières correspondra à une inclusion.
+Si vous travaillez sur une grande feuille de style, la section correspondante sera 
+également dans ce fichier. Si vous travaillez sur plusieurs fichiers, chaque élément 
+de la table des matières correspondra à une inclusion.
 
 ### Titres de section
 
-La table des matières ne serait d'aucune utilité si elle ne possède pas une section correspondante.
-Les sections sont désignées ainsi :
+La table des matières n'est d'aucune utilité si elle ne possède pas de section 
+correspondante. Les sections sont désignées ainsi :
 
     /*------------------------------------*\
         $RESET
@@ -140,12 +145,14 @@ Ce gros morceau d'espaces est rapidement perceptible lorsque vous faites défile
 des fichiers plus volumineux.
 
 Si vous travaillez sur plusieurs feuilles de styles, démarrez chacun de ces
-fichiers avec un titre de section. Il n'est pas nécessaire d'inclure des retours chariot.
+fichiers avec un titre de section. Il n'est pas nécessaire d'inclure des retours 
+chariot.
 
 ## Ordre des sources
 
-Essayez d'écrire des feuilles de style dans leur ordre de spécificité. Cela garantit que vous
-conservez l'avantage de l'héritage en compte ainsi que le <i>C</i> du CSS qui signifie cascade.
+Essayez d'écrire des feuilles de style dans leur ordre de spécificité. Cela garantit 
+que vous conservez l'avantage de l'héritage ainsi que le <i>C</i> du CSS qui signifie 
+cascade.
 
 Une feuille de style bien ordonnée ressemblera à ceci :
 
@@ -155,9 +162,9 @@ Une feuille de style bien ordonnée ressemblera à ceci :
 4. **Composants** – composants complets construits à partir d'objets et de leurs extensions.
 5. **Atouts de style** – états des erreurs etc.
 
-Cela signifie que, lorsque vous descendez dans le document chaque section s'appuie et
-hérite de la précédente. Il devrait y avoir moins d'annulation de
-styles, moins de problèmes de spécificité, moins de création de style tous azimuts et une
+Cela signifie que, lorsque vous descendez dans le document chaque section s'appuie 
+et hérite de la précédente. Il devrait y avoir moins d'annulation de styles, moins 
+de problèmes de spécificité, moins de création de style tous azimuts et une
 meilleure architecture de vos feuilles.
 
 Pour en savoir plus, Je vous recommancde chaudement de lire
@@ -201,14 +208,14 @@ Un petit exemple :
             padding:0.25em;
         }
 
-Ici, nous pouvons voir que `.widget-heading` doit être un enfant de `.widget` que nous avons
-indenté .widget-heading` d'un niveau plus profond que `.widget`. C'est une
-information utile pour les développeurs qui peuvent être scannées seulement d'un coup d'œil
-suivant l'indentation de notre ensemble de règles.
+Ici, nous pouvons voir que `.widget-heading` doit être un enfant de `.widget` 
+que nous avons indenté .widget-heading` d'un niveau plus profond que `.widget`. 
+C'est une information utile pour les développeurs qui peuvent être scannées 
+seulement d'un coup d'oeil suivant l'indentation de notre ensemble de règles.
 
-Nous pouvons également voir que les déclarations de `.widget-heading` sont triés par leur
-pertinence. `.widget-heading` doit être un élément textuel si nous commençons avec nos
-règles de texte, suivie par toutes les autres.
+Nous pouvons également voir que les déclarations de `.widget-heading` sont triés 
+par leur pertinence. `.widget-heading` doit être un élément textuel si nous 
+commençons avec nos règles de texte, suivie par toutes les autres.
 
 Une exception à notre règle multi-ligne pourrait être dans le cas suivant :
 
@@ -232,9 +239,9 @@ il est plus logique de tout concentrer sur une seule ligne.
 
 ## Convention de nommage
 
-La plupart du temps, j'utilise simplement des classes délimités par des traits d'union (ex. `. Foo-bar`, pas
-`. foo_bar` ou `. FooBar), mais dans certaines circonstances, j'utilise la notation BEM (Block,
-Élément, Modifieur).
+La plupart du temps, j'utilise simplement des classes délimités par des traits 
+d'union (ex. `. Foo-bar`, pas `. foo_bar` ou `. FooBar), mais dans certaines 
+circonstances, j'utilise la notation BEM (Block, Élément, Modifieur).
 
 <abbr title="Block, Element, Modifier">BEM</abbr> est une méthode pour nommer
 et classifier vos sélecteurs CSS de façon à les rendre beaucoup plus strict,
@@ -259,14 +266,14 @@ Une **analogie** du fonctionement de la méthode BEM :
         .personne__main--gauche{}
         .personne__main--droite{}
 
-Ici, nous pouvons voir que l'objet de base que nous décrivons est une personne, et qu'une
-autre type de personne pourrait être une femme. Nous pouvons également voir que les gens ont
-des mains, ce sont des sous-parties des personnes, et il y a différentes variantes,
-comme main gauche et main droite.
+Ici, nous pouvons voir que l'objet de base que nous décrivons est une personne, 
+et qu'une autre type de personne pourrait être une femme. Nous pouvons également 
+voir que les gens ont des mains, ce sont des sous-parties des personnes, et il y 
+a différentes variantes, comme main gauche et main droite.
 
-Nous pouvons maintenant nommer nos sélectionneurs en fonction de leurs objets de base et nous
-pouvons également savoir ce que le sélecteur fait, est-il un sous-composant (`__`) ou une
-variation (`--`)?
+Nous pouvons maintenant nommer nos sélectionneurs en fonction de leurs objets de 
+base et nous pouvons également savoir ce que le sélecteur fait, est-il un 
+sous-composant (`__`) ou une variation (`--`)?
 
 Ainsi, `.page-wrapper` est un sélecteur autonome, il ne fait pas partie d'une
 abstraction ou d'un composant et comme tel il nommé correctement.
@@ -274,12 +281,20 @@ Toutefois, `.widget-heading`
  _est_ lié à un composant, c'est un enfant du constructeur `.widget`.
 Nous devrions renommer cette classe `.widget__heading`.
 
-La notation BEM est un peu laide, plus verbeuse, mais elle nous donne beaucoup plus de pouvoir dans le glanage d'informations sur les fonctions et sur les relations entre les éléments, uniquement avec leurs nom de classes. En outre, la syntaxe BEM sera généralement très bien compressée (gzip) puisqu'elle favorise / fonctionne bien avec la répétition.
+La notation BEM est un peu laide, plus verbeuse, mais elle nous donne beaucoup 
+plus de pouvoir dans le glanage d'informations sur les fonctions et sur les 
+relations entre les éléments, uniquement avec leurs nom de classes. En outre, la 
+syntaxe BEM sera généralement très bien compressée (gzip) puisqu'elle favorise / 
+fonctionne bien avec la répétition.
 
-Peu importe si vous avez besoin d'utiliser BEM ou non, assurez-vous de toujours nommer vos classes judicieusement; garder un nom aussi court que possible, mais aussi long que nécessaire. S'assurer que les objets ou les abstractions sont très vaguement nommées (par exemple `.ui-list`, `.media`) pour permettre une meilleure réutilisation.
-Les extensions des objets devraient être nommées beaucoup plus explicitement
-(par exemple `.user-avatar-link`). Ne vous inquiétez pas du montant ou de la taille de
-vos classes; gzip compresse le code bien écrit _incroyablement_ bien.
+Peu importe si vous avez besoin d'utiliser BEM ou non, assurez-vous de toujours 
+nommer vos classes judicieusement; garder un nom aussi court que possible, mais 
+aussi long que nécessaire. S'assurer que les objets ou les abstractions sont très 
+vaguement nommées (par exemple `.ui-list`, `.media`) pour permettre une meilleure 
+réutilisation. Les extensions des objets devraient être nommées beaucoup plus 
+explicitement (par exemple `.user-avatar-link`). Ne vous inquiétez pas du montant 
+ou de la taille de vos classes; gzip compresse le code bien écrit _incroyablement_ 
+bien.
 
 ### Classes en HTML
 
@@ -297,10 +312,10 @@ de plusieurs classes.
 Associer un comportement javascript à une classe de style  signifie que nous ne
 pourrons jamais avoir l'un sans l'autre.
 
-Si vous avez besoin de se lier un évènement à une balise, créez une classe JS dans votre CSS.
-Il s'agit simplement d'une classe avec un nommage `.js-`, par exemple `.js-toggle`, `.js-drag-and-drop`.
-Cela signifie que nous pouvons joindre les deux classes JS et CSS pour notre balisage, sans avoir
-de chevauchements gênants.
+Si vous avez besoin de se lier un évènement à une balise, créez une classe JS 
+dans votre CSS. Il s'agit simplement d'une classe avec un nommage `.js-`, par 
+exemple `.js-toggle`, `.js-drag-and-drop`. Cela signifie que nous pouvons joindre 
+les deux classes JS et CSS pour notre balisage, sans avoir de chevauchements gênants.
 
     <th class="is-sortable  js-is-sortable">
     </th>
@@ -319,23 +334,27 @@ writing bilingual classes, par exemple :
 
 En dépit d'être un développeur Anglais, je passe ma vie à écrire <i>colour</i>
 au lieu de <i>color</i> Je pense que, dans un souci de cohérence, il est préférable
-d'utiliser toujours un anglais Américain en CSS. CSS, comme avec la plupart (sinon tous) les autres langages,
-est écrit en anglais-US. Mélanger une syntaxe `color: red;` avec des classes comme
-`.colour-picker{}` peut manquer de cohérence. J'ai déjà proposé et défendu une écriture des classes bilingues,
+d'utiliser toujours un anglais Américain en CSS. CSS, comme avec la plupart 
+(sinon tous) les autres langages, est écrit en anglais-US. Mélanger une syntaxe 
+`color: red;` avec des classes comme `.colour-picker{}` peut manquer de cohérence. 
+J'ai déjà proposé et défendu une écriture des classes bilingues,
 
     .color-picker,
     .colour-picker{
     }
 
-Cependant, après avoir récemment travaillé sur un projet de grande envergure en Sass où il y avait
-des dizaines de variables de couleur (par exemple `$brand-color`, `$highlight-color` etc.),
-maintenir deux versions de chaque variable est vite devenu ennuyeux. Cela signifie également
-deux fois plus de travail avec des choses comme "rechercher et remplacer".
+Cependant, après avoir récemment travaillé sur un projet de grande envergure en 
+Sass où il y avait des dizaines de variables de couleur (par exemple `$brand-color`, 
+`$highlight-color` etc.), maintenir deux versions de chaque variable est vite devenu 
+ennuyeux. Cela signifie également deux fois plus de travail avec des choses comme 
+"rechercher et remplacer".
 
-Dans un souci de cohérence, nommez toujours vos classes et vos variables dans les paramètres régionaux
-de la langue que vous utilisez.
+Dans un souci de cohérence, nommez toujours vos classes et vos variables dans les 
+paramètres régionaux de la langue que vous utilisez.
 
-Vous pouvez aussi vous mettre d'accord avec votre équipe de développement pour n'utiliser que de l'anglais pour vos projets. Cela vous permettra d'améliorer votre maîtrise de la langue de Shakespeare.
+Vous pouvez aussi vous mettre d'accord avec votre équipe de développement pour 
+n'utiliser que de l'anglais pour vos projets. Cela vous permettra d'améliorer votre 
+maîtrise de la langue de Shakespeare.
 
 ## Commentaires
 
@@ -357,14 +376,14 @@ J'utilise un style de commentaire docBlock où la taille est limitée à 80 cara
      * copier-coller.
      */
 
-Vous devez documenter et commenter notre code autant que vous le pouvez, quoi qu'il arrive.
-Cela peut sembler trop transparent ou explicite pour vous mais peut-être pas pour un autre dev.
-Chaque nouveau morceau de code doit-être documenté.
+Vous devez documenter et commenter notre code autant que vous le pouvez, quoi 
+qu'il arrive. Cela peut sembler trop transparent ou explicite pour vous mais 
+peut-être pas pour un autre dev. Chaque nouveau morceau de code doit-être documenté.
 
 ### Commentaires sous stéroïdes
 
-Il ya un certain nombre de techniques plus avancées que vous pouvez employer en ce qui concerne
-les commentaires, à savoir :
+Il ya un certain nombre de techniques plus avancées que vous pouvez employer en 
+ce qui concerne les commentaires, à savoir :
 
 * Les sélecteurs spécifiques
 * Le codage des balises
