@@ -1,69 +1,3 @@
-# Guide des feuilles de styles CSS, conseils et bonnes pratiques
-
----
-
-## Traductions
-
-* [русский](https://github.com/matmuchrapna/CSS-Guidelines/blob/master/README%20Russian.md)
-* [English](https://github.com/csswizardry/CSS-Guidelines)
-
----
-
-En travaillant sur de grands projets d'envergure fonctionnant avec des dizaines
-de développeurs, il est important que nous travaillions tous de façon unifiée
-avec pour objectif de :
-
-* Garder les feuilles de style maintenables
-* Garder le code transparent et lisible
-* Garder les feuilles de style extensibles
-
-Il existe plusieures techniques que nous devons employer pour satisfaire ces objectifs.
-
-La première partie de ce document traitera de la syntaxe, du formatage et de la
-taxonomie CSS.
-La deuxième partie traitera de l'approche, l'état d'esprit et l'attitude à avoir
-pour écrire et architecturer du CSS.
-Passionnant, hein?
-
-## Contenu
-
-* [Anatomie d'un document CSS](#anatomie-dun-document-css)
-  * [Généralités](#gnralits)
-  * [Un seul fichier ou plusieurs fichiers ?](#un-seul-fichier-ou-plusieurs-fichiers-)
-  * [Table des matières](#table-des-matires)
-  * [Titre de section](#titres-de-section)
-* [Ordre des sources](#ordre-des-sources)
-* [Anatomie d'une règle](#anatomie-dune-rgle)
-* [Classes en HTML](#classes-en-html)
-* [Convention de nomage](#convention-de-nommage)
-  * [Classes en HTML](#classes-en-html)
-  * [Ancres javascript](#ancres-javascript)
-  * [Localisation](#localisation)
-* [Commentaires](#commentaires)
-  * [Commentaires sous stéroïdes](#commentaires-sous-strodes)
-  * [Sélecteurs spécifiques](#slecteurs-spcifiques)
-  * [Code des balises](#code-des-balises)
-  * [Association des objets](#association-des-objets)
-* [Ecrire du CSS](#ecrire-du-css)
-* [Construire de nouveau composants](#construire-de-nouveau-composants)
-* [CSSOO](#cssoo)
-* [Mise en page](#mise-en-page)
-* [Taille des interfaces](#taille-des-interfaces)
-  * [Taille des polices](#taille-des-polices)
-* [Raccourcis](#raccourcis)
-* [IDs](#ids)
-* [Sélecteurs](#slecteurs)
-  * [Surqualification des sélecteurs](#surqualification-des-slecteurs)
-  * [Performance des sélecteurs](#performance-des-slecteurs)
-* [L'intention de sélection](#lintention-de-slection)
-* [`!important`](#important)
-* [Nombres magiques et absolu](#nombres-magiques-et-absolus)
-* [Styles conditionnel](#styles-conditionnel)
-* [Débugage](#dbugage)
-* [Préprocesseurs](#prprocesseurs)
-
----
-
 ## Anatomie d'un document CSS
 
 Peu importe le document, il faut toujours essayer de garder un formatage commun. 
@@ -209,8 +143,8 @@ Un petit exemple :
         }
 
 Ici, nous pouvons voir que `.widget-heading` doit être un enfant de `.widget` 
-que nous avons indenté .widget-heading` d'un niveau plus profond que `.widget`. 
-C'est une information utile pour les développeurs qui peuvent être scannées 
+que nous avons indenté `.widget-heading` d'un niveau plus profond que `.widget`. 
+C'est une information utile pour les développeurs qui peut être scanné 
 seulement d'un coup d'oeil suivant l'indentation de notre ensemble de règles.
 
 Nous pouvons également voir que les déclarations de `.widget-heading` sont triés 
@@ -243,8 +177,8 @@ La plupart du temps, j'utilise simplement des classes délimités par des traits
 d'union (ex. `. Foo-bar`, pas `. foo_bar` ou `. FooBar`), mais dans certaines 
 circonstances, j'utilise la notation BEM (Block, Élément, Modifieur).
 
-<abbr title="Block, Element, Modifier">BEM</abbr> est une méthode pour nommer
-et classifier vos sélecteurs CSS de façon à les rendre beaucoup plus strict,
+<abbr title="Block, Element, Modifier">BEM</abbr>
+est une méthode pour nommer et classifier vos sélecteurs CSS de façon à les rendre beaucoup plus strict,
 transparent et informatif.
 
 La convention de nommage suit ce modèle :

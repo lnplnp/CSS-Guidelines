@@ -1,0 +1,142 @@
+---
+title: Guide des feuilles de styles CSS, conseils et bonnes pratiques
+---
+
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <a href="#">Guide CSS</a>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+      <li class="has-dropdown"><a href="#">Contenu</a>
+
+        <ul class="dropdown">
+          <li class="has-dropdown">
+            <a href="#anatomie-dun-document-css">Anatomie d’un document CSS</a>
+            <ul class="dropdown">
+              <li><a href="#gnralits">Généralités</a></li>
+              <li><a href="#un_seul_fichier_ou_plusieurs_fichiers_">Un seul fichier ou plusieurs fichiers ?</a></li>
+              <li><a href="#table_des_matires">Table des matières</a></li>
+              <li><a href="#titres_de_section">Titre de section</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#ordre_des_sources">Ordre des sources</a>
+          </li>
+
+          <li>
+            <a href="#anatomie_dune_rgle">Anatomie d’une règle</a>
+          </li>
+
+          <li>
+            <a href="#classes_en_html">Classes en HTML</a>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="#convention_de_nommage">Convention de nomage</a>
+            <ul class="dropdown">
+              <li><a href="#classes_en_html">Classes en HTML</a></li>
+              <li><a href="#ancres_javascript">Ancres javascript</a></li>
+              <li><a href="#localisation">Localisation</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="#commentaires">Commentaires</a>
+            <ul class="dropdown">
+              <li><a href="#commentaires_sous_strodes">Commentaires sous stéroïdes</a></li>
+              <li><a href="#slecteurs_spcifiques">Sélecteurs spécifiques</a></li>
+              <li><a href="#code_des_balises">Code des balises</a></li>
+              <li><a href="#association_des_objets">Association des objets</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#ecrire_du_css">Ecrire du CSS</a>
+          </li>
+
+          <li>
+            <a href="#construire_de_nouveau_composants">Construire de nouveau composants</a>
+          </li>
+
+          <li>
+            <a href="#cssoo">CSSOO</a>
+          </li>
+
+          <li>
+            <a href="#mise_en_page">Mise en page</a>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="#taille_des_interfaces">Taille des interfaces</a>
+            <ul class="dropdown">
+              <li><a href="#taille_des_polices">Taille des polices</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#raccourcis">Raccourcis</a>
+          </li>
+
+          <li>
+            <a href="#ids">IDs</a>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="#slecteurs">Sélecteurs</a>
+            <ul class="dropdown">
+              <li><a href="#surqualification_des_slecteurs">Surqualification des sélecteurs</a></li>
+              <li><a href="#performance_des_slecteurs">Performance des sélecteurs</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#lintention_de_slection">L’intention de sélection</a>
+          </li>
+
+          <li>
+            <a href="#important"><code>!important</code></a>
+          </li>
+
+          <li>
+            <a href="#nombres_magiques_et_absolus">Nombres magiques et absolu</a>
+          </li>
+
+          <li>
+            <a href="#styles_conditionnel">Styles conditionnel</a>
+          </li>
+
+          <li>
+            <a href="#dbugage">Débugage</a>
+          </li>
+
+          <li>
+            <a href="#prprocesseurs">Préprocesseurs</a>
+          </li>
+        </ul>
+
+
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+  </section>
+</nav>
+
+<div class="row">
+	<div class="large-12  columns">
+    <h1 class="giga">Guide des feuilles de styles CSS, conseils et bonnes pratiques</h1>
+
+    <%= Maruku.new(partial "introduction").to_html; %>
+		<%= Maruku.new(partial "guide").to_html; %>
+	</div>
+</div>
