@@ -4,7 +4,7 @@ body {
   background: url("../images/background_paper.jpg") repeat fixed 0 0 #EBE9E7;
 }
 
-h1{ text-shadow: 0 2px 0 #FCF9EE, 0 4px 0 rgba(0, 0, 0, 0.15); margin: 1em 0 !important;}
+h1{ text-shadow: 0 2px 0 #FCF9EE, 0 4px 0 rgba(0, 0, 0, 0.15); margin: 1em 0 !important; }
 h2{ text-shadow: 0 1px 0 #FCF9EE, 0 2px 0 rgba(0, 0, 0, 0.15); }
 
 code{
@@ -56,3 +56,7 @@ pre > code {
     color: #ffffff;
     text-decoration: none;
 }
+
+
+a { color: $cyan; text-decoration: none; }
+a:hover { color: $yellow; }
