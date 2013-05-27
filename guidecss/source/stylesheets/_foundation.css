@@ -1164,3 +1164,11 @@ select {
       right: 0; }
       .top-bar-section ul.right li .dropdown li .dropdown {
         right: 100%; } }
+
+
+.sticky {
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 99; }
