@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width"
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+
+    title
+      == data.page.title || "Guide CSS"
+    meta name="description" content="<%= data.page.title %>"
+
+    link href='http://fonts.googleapis.com/css?family=Kreon|PT+Sans' rel='stylesheet' type='text/css'
+    == stylesheet_link_tag "application"
+
+  body class="<%= page_classes %>"
+    == yield
+    == javascript_include_tag  "application"
+

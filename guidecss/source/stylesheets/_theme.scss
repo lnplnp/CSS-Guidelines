@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+body {
+  background: url("../images/background_paper.jpg") repeat fixed 0 0 #EBE9E7;
+}
+
+h1{ text-shadow: 0 2px 0 #FCF9EE, 0 4px 0 rgba(0, 0, 0, 0.15); margin: 1em 0 !important; }
+h2{ text-shadow: 0 1px 0 #FCF9EE, 0 2px 0 rgba(0, 0, 0, 0.15); }
+
+code{
+    background-color: #F8F8F8;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px 3px 3px 3px;
+    margin: 0 2px;
+    padding: 0 5px;
+}
+code {
+    white-space: nowrap;
+}
+pre > code {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+}
+.highlight pre, pre {
+    background-color: #F8F8F8;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+}
+
+
+.top-bar-section ul{
+    padding: 0;
+}
+
+.top-bar-section ul li > a {
+    text-decoration: none;
+}
+
+.top-bar-section code{
+    color: #444444;
+}
+
+.title-area{
+    margin: 0;
+    padding: 0 1em;
+}
+
+.title-area a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+a { color: $cyan; text-decoration: none; }
+a:hover { color: $magenta; }
+
+
+
+
