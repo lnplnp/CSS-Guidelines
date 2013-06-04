@@ -41,9 +41,9 @@ Passionnant, hein?
   * [Localisation](#localisation)
 * [Commentaires](#commentaires)
   * [Commentaires sous stéroïdes](#commentaires-sous-strodes)
-    * [Sélecteurs spécifiques](#slecteurs-spcifiques)
-    * [Code des balises](#code-des-balises)
-    * [Association des objets](#association-des-objets)
+  * [Sélecteurs spécifiques](#slecteurs-spcifiques)
+  * [Code des balises](#code-des-balises)
+  * [Association des objets](#association-des-objets)
 * [Ecrire du CSS](#ecrire-du-css)
 * [Construire de nouveau composants](#construire-de-nouveau-composants)
 * [CSSOO](#cssoo)
@@ -240,7 +240,7 @@ il est plus logique de tout concentrer sur une seule ligne.
 ## Convention de nommage
 
 La plupart du temps, j'utilise simplement des classes délimités par des traits 
-d'union (ex. `. Foo-bar`, pas `. foo_bar` ou `. FooBar), mais dans certaines 
+d'union (ex. `. Foo-bar`, pas `. foo_bar` ou `. FooBar`), mais dans certaines 
 circonstances, j'utilise la notation BEM (Block, Élément, Modifieur).
 
 <abbr title="Block, Element, Modifier">BEM</abbr> est une méthode pour nommer
