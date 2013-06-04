@@ -1,15 +1,15 @@
 ## Anatomie d'un document CSS
 
-Peu importe le document, il faut toujours essayer de garder un formatage commun. 
+Peu importe le document, il faut toujours essayer de garder un formatage commun.
 Cela signifie une cohérence des commentaires, de la syntaxe et des règles de nommage.
 
 ### Généralités
 
-Limitez vos feuilles de style avec un maximum de 80 caractères de longeur lorsque 
-cela est possible. Des exceptions peuvent être la syntaxe des dégradés ainsi que 
+Limitez vos feuilles de style avec un maximum de 80 caractères de longeur lorsque
+cela est possible. Des exceptions peuvent être la syntaxe des dégradés ainsi que
 les URL dans les commentaires. Il n'y a rien que nous puissions faire à ce sujet.
 
-Concernant l'indentation je préfère 2 espaces au lieu des tabulations et écrire 
+Concernant l'indentation je préfère 2 espaces au lieu des tabulations et écrire
 sur plusieures lignes CSS.
 
 ### Un seul fichier ou plusieurs fichiers ?
@@ -17,15 +17,15 @@ sur plusieures lignes CSS.
 Certaines personnes préfèrent travailler avec de simple fichiers volumineux.
 Cela fonctionne très bien pour les petits projets mais avec les directives suivantes
 vous aller très vite renconter des problèmes.
-Depuis l'arrivée de sass j'ai commencé à séparer mes feuilles de styles en petits 
-fichiers. Cette méthode est aussi très bonne. Quelle que soit la méthode que vous 
-choisissez, les règles suivantes et les lignes directrices s'appliquent. La seule 
-différence notable est en ce qui concerne notre table des matières et nos titres 
+Depuis l'arrivée de sass j'ai commencé à séparer mes feuilles de styles en petits
+fichiers. Cette méthode est aussi très bonne. Quelle que soit la méthode que vous
+choisissez, les règles suivantes et les lignes directrices s'appliquent. La seule
+différence notable est en ce qui concerne notre table des matières et nos titres
 de section. Lisez la suite pour plus d'explications ...
 
 ### Table des matières
 
-Au sommet des feuilles de style, je maintiens une table des matières qui détaillera 
+Au sommet des feuilles de style, je maintiens une table des matières qui détaillera
 les sections contenues dans le document, par exemple:
 
 
@@ -38,17 +38,17 @@ les sections contenues dans le document, par exemple:
      * FONT................Les polices de caractère
      */
 
-Ceci va permettre au prochain développeur de savoir exactement ce qu'il va trouver 
-dans ce fichier. Chaque élément de la table des matières correspond directement 
+Ceci va permettre au prochain développeur de savoir exactement ce qu'il va trouver
+dans ce fichier. Chaque élément de la table des matières correspond directement
 à un titre de section.
 
-Si vous travaillez sur une grande feuille de style, la section correspondante sera 
-également dans ce fichier. Si vous travaillez sur plusieurs fichiers, chaque élément 
+Si vous travaillez sur une grande feuille de style, la section correspondante sera
+également dans ce fichier. Si vous travaillez sur plusieurs fichiers, chaque élément
 de la table des matières correspondra à une inclusion.
 
 ### Titres de section
 
-La table des matières n'est d'aucune utilité si elle ne possède pas de section 
+La table des matières n'est d'aucune utilité si elle ne possède pas de section
 correspondante. Les sections sont désignées ainsi :
 
     /*------------------------------------*\
@@ -79,13 +79,13 @@ Ce gros morceau d'espaces est rapidement perceptible lorsque vous faites défile
 des fichiers plus volumineux.
 
 Si vous travaillez sur plusieurs feuilles de styles, démarrez chacun de ces
-fichiers avec un titre de section. Il n'est pas nécessaire d'inclure des retours 
+fichiers avec un titre de section. Il n'est pas nécessaire d'inclure des retours
 chariot.
 
 ## Ordre des sources
 
-Essayez d'écrire des feuilles de style dans leur ordre de spécificité. Cela garantit 
-que vous conservez l'avantage de l'héritage ainsi que le <i>C</i> du CSS qui signifie 
+Essayez d'écrire des feuilles de style dans leur ordre de spécificité. Cela garantit
+que vous conservez l'avantage de l'héritage ainsi que le <i>C</i> du CSS qui signifie
 cascade.
 
 Une feuille de style bien ordonnée ressemblera à ceci :
@@ -96,8 +96,8 @@ Une feuille de style bien ordonnée ressemblera à ceci :
 4. **Composants** – composants complets construits à partir d'objets et de leurs extensions.
 5. **Atouts de style** – états des erreurs etc.
 
-Cela signifie que, lorsque vous descendez dans le document chaque section s'appuie 
-et hérite de la précédente. Il devrait y avoir moins d'annulation de styles, moins 
+Cela signifie que, lorsque vous descendez dans le document chaque section s'appuie
+et hérite de la précédente. Il devrait y avoir moins d'annulation de styles, moins
 de problèmes de spécificité, moins de création de style tous azimuts et une
 meilleure architecture de vos feuilles.
 
@@ -142,13 +142,13 @@ Un petit exemple :
             padding:0.25em;
         }
 
-Ici, nous pouvons voir que `.widget-heading` doit être un enfant de `.widget` 
-que nous avons indenté `.widget-heading` d'un niveau plus profond que `.widget`. 
-C'est une information utile pour les développeurs qui peut être scanné 
+Ici, nous pouvons voir que `.widget-heading` doit être un enfant de `.widget`
+que nous avons indenté `.widget-heading` d'un niveau plus profond que `.widget`.
+C'est une information utile pour les développeurs qui peut être scanné
 seulement d'un coup d'oeil suivant l'indentation de notre ensemble de règles.
 
-Nous pouvons également voir que les déclarations de `.widget-heading` sont triés 
-par leur pertinence. `.widget-heading` doit être un élément textuel si nous 
+Nous pouvons également voir que les déclarations de `.widget-heading` sont triés
+par leur pertinence. `.widget-heading` doit être un élément textuel si nous
 commençons avec nos règles de texte, suivie par toutes les autres.
 
 Une exception à notre règle multi-ligne pourrait être dans le cas suivant :
@@ -173,8 +173,8 @@ il est plus logique de tout concentrer sur une seule ligne.
 
 ## Convention de nommage
 
-La plupart du temps, j'utilise simplement des classes délimités par des traits 
-d'union (ex. `. Foo-bar`, pas `. foo_bar` ou `. FooBar`), mais dans certaines 
+La plupart du temps, j'utilise simplement des classes délimités par des traits
+d'union (ex. `. Foo-bar`, pas `. foo_bar` ou `. FooBar`), mais dans certaines
 circonstances, j'utilise la notation BEM (Block, Élément, Modifieur).
 
 <abbr title="Block, Element, Modifier">BEM</abbr>
@@ -200,13 +200,13 @@ Une **analogie** du fonctionement de la méthode BEM :
         .personne__main--gauche{}
         .personne__main--droite{}
 
-Ici, nous pouvons voir que l'objet de base que nous décrivons est une personne, 
-et qu'une autre type de personne pourrait être une femme. Nous pouvons également 
-voir que les gens ont des mains, ce sont des sous-parties des personnes, et il y 
+Ici, nous pouvons voir que l'objet de base que nous décrivons est une personne,
+et qu'une autre type de personne pourrait être une femme. Nous pouvons également
+voir que les gens ont des mains, ce sont des sous-parties des personnes, et il y
 a différentes variantes, comme main gauche et main droite.
 
-Nous pouvons maintenant nommer nos sélectionneurs en fonction de leurs objets de 
-base et nous pouvons également savoir ce que le sélecteur fait, est-il un 
+Nous pouvons maintenant nommer nos sélectionneurs en fonction de leurs objets de
+base et nous pouvons également savoir ce que le sélecteur fait, est-il un
 sous-composant (`__`) ou une variation (`--`)?
 
 Ainsi, `.page-wrapper` est un sélecteur autonome, il ne fait pas partie d'une
@@ -215,19 +215,19 @@ Toutefois, `.widget-heading`
  _est_ lié à un composant, c'est un enfant du constructeur `.widget`.
 Nous devrions renommer cette classe `.widget__heading`.
 
-La notation BEM est un peu laide, plus verbeuse, mais elle nous donne beaucoup 
-plus de pouvoir dans le glanage d'informations sur les fonctions et sur les 
-relations entre les éléments, uniquement avec leurs nom de classes. En outre, la 
-syntaxe BEM sera généralement très bien compressée (gzip) puisqu'elle favorise / 
+La notation BEM est un peu laide, plus verbeuse, mais elle nous donne beaucoup
+plus de pouvoir dans le glanage d'informations sur les fonctions et sur les
+relations entre les éléments, uniquement avec leurs nom de classes. En outre, la
+syntaxe BEM sera généralement très bien compressée (gzip) puisqu'elle favorise /
 fonctionne bien avec la répétition.
 
-Peu importe si vous avez besoin d'utiliser BEM ou non, assurez-vous de toujours 
-nommer vos classes judicieusement; garder un nom aussi court que possible, mais 
-aussi long que nécessaire. S'assurer que les objets ou les abstractions sont très 
-vaguement nommées (par exemple `.ui-list`, `.media`) pour permettre une meilleure 
-réutilisation. Les extensions des objets devraient être nommées beaucoup plus 
-explicitement (par exemple `.user-avatar-link`). Ne vous inquiétez pas du montant 
-ou de la taille de vos classes; gzip compresse le code bien écrit _incroyablement_ 
+Peu importe si vous avez besoin d'utiliser BEM ou non, assurez-vous de toujours
+nommer vos classes judicieusement; garder un nom aussi court que possible, mais
+aussi long que nécessaire. S'assurer que les objets ou les abstractions sont très
+vaguement nommées (par exemple `.ui-list`, `.media`) pour permettre une meilleure
+réutilisation. Les extensions des objets devraient être nommées beaucoup plus
+explicitement (par exemple `.user-avatar-link`). Ne vous inquiétez pas du montant
+ou de la taille de vos classes; gzip compresse le code bien écrit _incroyablement_
 bien.
 
 ### Classes en HTML
@@ -246,9 +246,9 @@ de plusieurs classes.
 Associer un comportement javascript à une classe de style  signifie que nous ne
 pourrons jamais avoir l'un sans l'autre.
 
-Si vous avez besoin de se lier un évènement à une balise, créez une classe JS 
-dans votre CSS. Il s'agit simplement d'une classe avec un nommage `.js-`, par 
-exemple `.js-toggle`, `.js-drag-and-drop`. Cela signifie que nous pouvons joindre 
+Si vous avez besoin de se lier un évènement à une balise, créez une classe JS
+dans votre CSS. Il s'agit simplement d'une classe avec un nommage `.js-`, par
+exemple `.js-toggle`, `.js-drag-and-drop`. Cela signifie que nous pouvons joindre
 les deux classes JS et CSS pour notre balisage, sans avoir de chevauchements gênants.
 
     <th class="is-sortable  js-is-sortable">
@@ -268,26 +268,26 @@ writing bilingual classes, par exemple :
 
 En dépit d'être un développeur Anglais, je passe ma vie à écrire <i>colour</i>
 au lieu de <i>color</i> Je pense que, dans un souci de cohérence, il est préférable
-d'utiliser toujours un anglais Américain en CSS. CSS, comme avec la plupart 
-(sinon tous) les autres langages, est écrit en anglais-US. Mélanger une syntaxe 
-`color: red;` avec des classes comme `.colour-picker{}` peut manquer de cohérence. 
+d'utiliser toujours un anglais Américain en CSS. CSS, comme avec la plupart
+(sinon tous) les autres langages, est écrit en anglais-US. Mélanger une syntaxe
+`color: red;` avec des classes comme `.colour-picker{}` peut manquer de cohérence.
 J'ai déjà proposé et défendu une écriture des classes bilingues,
 
     .color-picker,
     .colour-picker{
     }
 
-Cependant, après avoir récemment travaillé sur un projet de grande envergure en 
-Sass où il y avait des dizaines de variables de couleur (par exemple `$brand-color`, 
-`$highlight-color` etc.), maintenir deux versions de chaque variable est vite devenu 
-ennuyeux. Cela signifie également deux fois plus de travail avec des choses comme 
+Cependant, après avoir récemment travaillé sur un projet de grande envergure en
+Sass où il y avait des dizaines de variables de couleur (par exemple `$brand-color`,
+`$highlight-color` etc.), maintenir deux versions de chaque variable est vite devenu
+ennuyeux. Cela signifie également deux fois plus de travail avec des choses comme
 "rechercher et remplacer".
 
-Dans un souci de cohérence, nommez toujours vos classes et vos variables dans les 
+Dans un souci de cohérence, nommez toujours vos classes et vos variables dans les
 paramètres régionaux de la langue que vous utilisez.
 
-Vous pouvez aussi vous mettre d'accord avec votre équipe de développement pour 
-n'utiliser que de l'anglais pour vos projets. Cela vous permettra d'améliorer votre 
+Vous pouvez aussi vous mettre d'accord avec votre équipe de développement pour
+n'utiliser que de l'anglais pour vos projets. Cela vous permettra d'améliorer votre
 maîtrise de la langue de Shakespeare.
 
 ## Commentaires
@@ -310,13 +310,13 @@ J'utilise un style de commentaire docBlock où la taille est limitée à 80 cara
      * copier-coller.
      */
 
-Vous devez documenter et commenter notre code autant que vous le pouvez, quoi 
-qu'il arrive. Cela peut sembler trop transparent ou explicite pour vous mais 
+Vous devez documenter et commenter notre code autant que vous le pouvez, quoi
+qu'il arrive. Cela peut sembler trop transparent ou explicite pour vous mais
 peut-être pas pour un autre dev. Chaque nouveau morceau de code doit-être documenté.
 
 ### Commentaires sous stéroïdes
 
-Il ya un certain nombre de techniques plus avancées que vous pouvez employer en 
+Il ya un certain nombre de techniques plus avancées que vous pouvez employer en
 ce qui concerne les commentaires, à savoir :
 
 * Les sélecteurs spécifiques
@@ -568,44 +568,44 @@ chose de simple à l'épreuve du temps.
 
 Comme indiqué plus haut, les chaînes de sélecteur sont de mauvaises nouvelles.
 
-Une surqualification des selecteurs ressemble à `div.promo`. Vous obtiendrez 
-suremment le même résultat en utilisant simplement `.promo`. Bien sur dans certains 
-cas vous _voulez_ associer une classe avec un élément. Exemple : vous avez 
-une classe générique `.error` qui a besoin d'avoir un aspect différent en fonction 
+Une surqualification des selecteurs ressemble à `div.promo`. Vous obtiendrez
+suremment le même résultat en utilisant simplement `.promo`. Bien sur dans certains
+cas vous _voulez_ associer une classe avec un élément. Exemple : vous avez
+une classe générique `.error` qui a besoin d'avoir un aspect différent en fonction
 de son éléments (par exemple,
-`.error {color: red;}` et `div.error {padding: 14px;}`). Généralement essayez 
+`.error {color: red;}` et `div.error {padding: 14px;}`). Généralement essayez
 d'éviter lorsque cela est possible.
 
 Un autre exemple d'un sélecteur surqualifiés pourrait être `ul.nav li a {}`. Comme
-ci-dessus, nous pouvons supprimer `ul` puisque nous savons que `.nav` est une liste, 
-il est aussi logique que `a` _doit_ être dans un `li`, donc nous mettre à la diète 
+ci-dessus, nous pouvons supprimer `ul` puisque nous savons que `.nav` est une liste,
+il est aussi logique que `a` _doit_ être dans un `li`, donc nous mettre à la diète
 `ul.nav li a {}` pour obtenir simplement `.nav a{}`.
 
 ### Performance des sélecteurs
 
-S'il est vrai que les navigateurs ne pourront pas continuer à interpréter encore 
-plus rapidement le CSS, l'efficacité est quelque chose que vous pourriez garder 
-en tête. En résumé, évitez les sélecteurs non imbriquées, l'universel (`*{}`), 
-ainsi que les sélecteurs CSS3 plus complexes devrait permettre de contourner ces 
+S'il est vrai que les navigateurs ne pourront pas continuer à interpréter encore
+plus rapidement le CSS, l'efficacité est quelque chose que vous pourriez garder
+en tête. En résumé, évitez les sélecteurs non imbriquées, l'universel (`*{}`),
+ainsi que les sélecteurs CSS3 plus complexes devrait permettre de contourner ces
 problèmes.
 
 ## L'intention de sélection
 
-Au lieu d'utiliser les sélecteurs pour cibler un élément du DOM, il est souvent 
+Au lieu d'utiliser les sélecteurs pour cibler un élément du DOM, il est souvent
 préférable de mettre une classe sur l'élément que vous voulez explicitement styler.
 Prenons l'exemple précis d'un sélecteur comme `.header ul{}` ...
 
-Imaginons que `ul` est en effet le menu principal de notre site Web. il vit dans 
+Imaginons que `ul` est en effet le menu principal de notre site Web. il vit dans
 l'en-tête et vous pensez que se sera le seul `ul` en ces lieux;
-`.header ul{}` fonctionnera, mais ce n'est pas idéal ou souhaitable. Ce n'est pas 
-à l'épreuve du temps et certainement pas assez explicite. Dès que nous ajouterons 
-un autre `ul` pour cet en-tête il va adopter le style de notre navigation principale. 
-Il y a beaucoup de chances que ce ne soit pas voulu. Cela signifie que nous devons 
-soit remanier une grande quantité de code _ou_ annuler beaucoups de style sur les 
+`.header ul{}` fonctionnera, mais ce n'est pas idéal ou souhaitable. Ce n'est pas
+à l'épreuve du temps et certainement pas assez explicite. Dès que nous ajouterons
+un autre `ul` pour cet en-tête il va adopter le style de notre navigation principale.
+Il y a beaucoup de chances que ce ne soit pas voulu. Cela signifie que nous devons
+soit remanier une grande quantité de code _ou_ annuler beaucoups de style sur les
 `ul`s dans ce `.header` pour supprimer les effets de la sélection globale.
 
 L'intention de votre sélecteur doit correspondre à la raison de votre style;
-Demandez-vous **'Est-ce-que je sélectionne cela car c'est un `ul` à l'intérieur 
+Demandez-vous **'Est-ce-que je sélectionne cela car c'est un `ul` à l'intérieur
 de `.header` ou parce que c'est la navigation principale de mon site ?'**.
 La réponse à cette question permettra de déterminer votre sélecteur.
 
@@ -613,8 +613,8 @@ Assurez-vous que votre sélecteur clé n'est jamais un élément / type ou
 une classe abstraite. Vous ne voulez pas vraiment voir comme sélecteurs
 `.sidebar ul{}` ou `.footer .media{}` dans votre feuille de theme.
 
-Soyez explicites; ciblez l'élément que vous voulez modifier, pas son parent. Ne 
-supposez jamais que le balisage ne changera pas. **Codez des sélecteurs qui ciblent 
+Soyez explicites; ciblez l'élément que vous voulez modifier, pas son parent. Ne
+supposez jamais que le balisage ne changera pas. **Codez des sélecteurs qui ciblent
 ce que vous voulez, pas ce qui se trouve être déjà là.**
 
 Vous pouvez consulter un article complet sur la question
@@ -622,40 +622,40 @@ Vous pouvez consulter un article complet sur la question
 
 ## `!important`
 
-Il est correct d'utiliser `!important` sur des classes d'assistance uniquement. 
+Il est correct d'utiliser `!important` sur des classes d'assistance uniquement.
 Vous pouvez aussi faire de la prévention en ajoutant `!important`
-dans le cas où vous savez que la règle sera **toujours ** prioritaire, par exemple 
+dans le cas où vous savez que la règle sera **toujours ** prioritaire, par exemple
 `.error {color: red !important;}`.
 
 Utiliser `!important` pour sortir d'une situation périlleuse, n'est pas conseillé. Retravaillez votre CSS et essayez de lutter contre ces problèmes en
-[réusinant](http://fr.wikipedia.org/wiki/R%C3%A9usinage_de_code) vos sélecteurs. Garder vos sélecteurs courts en évitant les IDS vous 
+[réusinant](http://fr.wikipedia.org/wiki/R%C3%A9usinage_de_code) vos sélecteurs. Garder vos sélecteurs courts en évitant les IDS vous
 aidera énormément.
 
 ## Nombres magiques et absolus
 
-Un nombre magique est un nombre qui est utilisé parce que « ça fonctionne ». Ceux-ci 
-sont mauvais parce qu'ils travaillent rarement pour un motif réel et ne sont 
-généralement pas à l'épreuve du temps ou flexible. Ils ont tendance à fixer des 
+Un nombre magique est un nombre qui est utilisé parce que « ça fonctionne ». Ceux-ci
+sont mauvais parce qu'ils travaillent rarement pour un motif réel et ne sont
+généralement pas à l'épreuve du temps ou flexible. Ils ont tendance à fixer des
 symptômes et non des problèmes.
 
 Par exemple, utiliser `.dropdown-nav li:hover ul{ top:37px; }` pour déplacer une liste déroulante avec `:hover` est mauvais, puisque 37px est un nombre magique. 37px grâce à un coup de chance puisque `.dropdown-nav` arrive à être 37px de hauteur.
 
-Au lieu de cela, vous devez utiliser `.dropdown-nav li:hover ul{ top:100%; }`. 
-quelque soit la hauteur de `.dropdown-nav`, dans la liste déroulante aura toujours 
+Au lieu de cela, vous devez utiliser `.dropdown-nav li:hover ul{ top:100%; }`.
+quelque soit la hauteur de `.dropdown-nav`, dans la liste déroulante aura toujours
 100% de déplacement par rapport à la hauteur.
 
-Chaque fois que vous codez en dur un certain nombre réfléchissez-y à deux fois, 
-si vous pouvez l'éviter en utilisant de mots-clés ou «alias» (`top: 100%` signifie 
-«tout le chemin depuis le sommet») ou &mdash;encore mieux&mdash; pas de mesures 
+Chaque fois que vous codez en dur un certain nombre réfléchissez-y à deux fois,
+si vous pouvez l'éviter en utilisant de mots-clés ou «alias» (`top: 100%` signifie
+«tout le chemin depuis le sommet») ou &mdash;encore mieux&mdash; pas de mesures
 du tout, alors vous devriez probablement.
 
-Chaque mesure codée en dur que vous définissez est un engagement que vous ne 
+Chaque mesure codée en dur que vous définissez est un engagement que vous ne
 pourriez pas nécessairement vouloir conserver.
 
 ## Styles conditionnel
 
-Les feuilles de style IE peuvent, généralement, être totalement évitées. La seule 
-fois où une feuille de style IE peut être nécessaire est de contourner le manque 
+Les feuilles de style IE peuvent, généralement, être totalement évitées. La seule
+fois où une feuille de style IE peut être nécessaire est de contourner le manque
 flagrant de fonctionnalité (Une correction des PNG par exemple).
 
 En règle générale, toutes les règles de mise en page et le modèle de boîte _devraient_
@@ -664,34 +664,27 @@ CSS clairement utilisé de façon arbitraire simplement « parce que ça fonctio
 
 ## Débugage
 
-Si vous rencontrez un problème CSS **relisez le code avant vous commencer à en 
-ajouter encore plus** dans l'espoir de le corriger. Le problème existe en CSS et 
+Si vous rencontrez un problème CSS **relisez le code avant vous commencer à en
+ajouter encore plus** dans l'espoir de le corriger. Le problème existe en CSS et
 il est déjà écrit, ajouter plus de CSS n'est pas la bonne réponse !
 
-Supprimez vos balises HTML et votre CSS jusqu'à ce que votre problème disparaîsse, 
+Supprimez vos balises HTML et votre CSS jusqu'à ce que votre problème disparaîsse,
 ensuite vous pouvez déterminer quelle partie du code pose problème.
 
 Il peut être tentant de mettre `overflow: hidden;` pour cacher les effets
-d'une bizarrerie de mise en page, mais `overflow` n'a probablement jamais été le 
+d'une bizarrerie de mise en page, mais `overflow` n'a probablement jamais été le
 problème; **fixez le problème, et non ses symptômes.**
 
 ## Préprocesseurs
 
-Sass is my preprocessor of choice. **Use it wisely.** Use Sass to make your CSS
-more powerful but avoid nesting like the plague! Nest only when it would
-actually be necessary in vanilla CSS, e.g.
-
-Sass est mon préprocesseur de choix. **Utilisez-le à bon escient.** Utiliser Sass 
-pour rendre votre CSS plus puissant, mais évitez la spécification comme la peste ! 
+Sass est mon préprocesseur de choix. **Utilisez-le à bon escient.** Utiliser Sass
+pour rendre votre CSS plus puissant, mais évitez la spécification comme la peste !
 Spécifiez seulement si c'est réellement nécessaire à votre CSS, par exemple
 
     .header{}
     .header .site-nav{}
     .header .site-nav li{}
     .header .site-nav li a{}
-
-Would be wholly unnecessary in normal CSS, so the following would be **bad**
-Sass:
 
 Serait tout à fait inutile dans des conditions normales CSS, le SASS est **mauvais** :
 
