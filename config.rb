@@ -65,8 +65,3 @@ configure :build do
   activate :minify_javascript
 end
 
-activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.remote = 'gh-pages'
-  deploy.branch = 'master'
-end
