@@ -7,7 +7,7 @@ nav.top-bar.sticky
     /! Title Area
     li.name
       a href="#"
-        'Guide CSS
+        '{ Guide CSS }
     /! Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
     li.toggle-topbar.menu-icon
       a href="#"
@@ -126,9 +126,21 @@ nav.top-bar.sticky
               'Préprocesseurs
       li.divider
 
+    ul.right
+      li.divider
+      li#btn-tw
+        a.twitter-follow-button data-lang="fr" data-show-count="false" href="https://twitter.com/_flexbox"
+      li#btn-gh
+        iframe allowtransparency="true" frameborder="0" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=flexbox&repo=CSS-Guidelines&type=fork" width="62"
+
+
 .row
-  .large-8.large-offset-4.columns
-    h1.giga Guide des feuilles de styles CSS, conseils et bonnes pratiques
+  .large-10.large-offset-2.columns
+    h1.giga Feuilles de styles CSS
+    h2.alpha Conseils et bonnes pratiques
+    hr
     == Maruku.new(partial "introduction").to_html;
+    hr
     == Maruku.new(partial "guide").to_html;
-== partial "footer"
+    hr
+    == partial "footer"
