@@ -1,11 +1,19 @@
-footer.row
-  h4
-    'Remerciements
-  div.large-6.columns
-    p
-      == link_to('@kdisneur ','https://twitter.com/kdisneur')
-      ' middleman guru
-  div.large-6.columns
-    p
-      == link_to('@abrisset ','https://twitter.com/abrisset')
-      'SEO ninja
+footer.footer-content
+  div.row
+    .columns.large-6
+      .row
+        .columns.large-4.hide-for-small
+          i.icon-cc.color
+        .columns.large-8
+          p
+            ' Licence
+            == link_to('Creative Communs.','http://creativecommons.org/licenses/by/3.0/')
+            br
+            'Vous êtes libre de copier, remixer ou pirater le contenu de ce site, à condition de
+            == link_to('citer son auteur','http://blog.davidleuliette.com')
+            '.
+    .columns.large-6
+      aside.pull-quote
+        blockquote
+          p
+            'La meilleure façon de maîtriser un sujet est de l'enseigner aux autres

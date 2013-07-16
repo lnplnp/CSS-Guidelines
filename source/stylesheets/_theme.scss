@@ -1,6 +1,11 @@
 body {
-  background: url("../images/background_paper.jpg") repeat fixed 0 0 #EBE9E7;
+    background: url("../images/background_paper.jpg") repeat fixed 0 0 #EBE9E7;
 }
+.footer-content{
+    background: url("../images/background_footer.png") repeat-x scroll 0 0 transparent;
+    padding: 2em 0 1em;
+}
+
 
 h1{
     text-shadow: 0 2px 0 #FCF9EE, 0 4px 0 rgba(0, 0, 0, 0.15);
@@ -38,7 +43,6 @@ pre > code {
     padding: 6px 10px;
 }
 
-
 .top-bar-section ul{
     padding: 0;
 }
@@ -61,10 +65,14 @@ pre > code {
     text-decoration: none;
 }
 
+a {
+    color: $cyan;
+    text-decoration: none;
+}
 
-a { color: $cyan; text-decoration: none; }
-a:hover { color: $magenta; }
-
+a:hover {
+    color: $magenta;
+}
 
 hr {
     height:0px; border:0px;
