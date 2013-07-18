@@ -50,6 +50,7 @@ $serif-boolean: true !default;
 
 $body-copy-color: $black-light;
 $heading-color: $black-light;
+$quote-color : $gray;
 
 
 // $Ampersand @font-face
@@ -660,15 +661,16 @@ h6 {
  *
  */
 
-@mixin pull-quotes($font-size, $opacity) {
+@mixin pull-quotes($font-size, $opacity, $color) {
 	position: relative;
 	padding: ems($font-size, $font-size);
 	&:before,
 	&:after {
 		height: ems($font-size, $font-size);
-		opacity: $opacity;
+		//opacity: $opacity;
 		position: absolute;
 		font-size: $font-size;
+		color: $color;
 	}
 	&:before {
 		content: '“';
@@ -683,7 +685,7 @@ h6 {
 }
 
 .pull-quote {
-	@include pull-quotes(4em, .15);
+	@include pull-quotes(4em, .15, $quote-color);
 }
 
 

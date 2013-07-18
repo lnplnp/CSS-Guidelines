@@ -7,13 +7,32 @@ footer.footer-content
         .columns.large-8
           p
             ' Licence
-            == link_to('Creative Communs.','http://creativecommons.org/licenses/by/3.0/')
+            == link_to('Creative Communs','http://creativecommons.org/licenses/by/3.0/')
+            '.
             br
-            'Vous êtes libre de copier, remixer ou pirater le contenu de ce site, à condition de
+            'Vous êtes libre de
+            span.color-contrast copier
+            ',
+            span.color-contrast remixer
+            '  ou
+            span.color-contrast pirater
+            '  le contenu de ce site, à condition de
             == link_to('citer son auteur','http://blog.davidleuliette.com')
             '.
     .columns.large-6
       aside.pull-quote
         blockquote
           p
-            'La meilleure façon de maîtriser un sujet est de l'enseigner aux autres
+            'La meilleure façon de
+            span.color-contrast maîtriser un sujet
+            '  est de l'enseigner aux autres.
+  .row
+    .columns.large-12
+      p.text-center
+        'Ce site est administré par David Leuliette. Il est codé avec ♥ grâce à un savant hacking de
+        == link_to('Middleman ', 'http://middlemanapp.com/')
+        'pour la génération du site,
+        == link_to('Foundation ', 'http://foundation.zurb.com/')
+        'pour le système de grille et
+        == link_to('github ', 'https://github.com/flexbox/')
+        'pour l'hébergement.
