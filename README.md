@@ -729,7 +729,7 @@ CSS clairement utilisé de façon arbitraire simplement « parce que ça fonctio
 
 ## Débugage
 
-Si vous rencontrez un problème CSS **relisez le code avant vous commencer à en
+Si vous rencontrez un problème CSS **relisez le code avant de commencer à en
 ajouter encore plus** dans l'espoir de le corriger. Le problème existe en CSS et
 il est déjà écrit, ajouter plus de CSS n'est pas la bonne réponse !
 
