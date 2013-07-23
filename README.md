@@ -23,7 +23,7 @@ La première partie de ce document traitera de la syntaxe, du formatage et de la
 taxonomie CSS.
 La deuxième partie traitera de l'approche, l'état d'esprit et l'attitude à avoir
 pour écrire et architecturer du CSS.
-Passionnant, hein?
+Passionnant, hein ?
 
 ## Contenu
 
@@ -83,7 +83,7 @@ sur plusieures lignes CSS.
 Certaines personnes préfèrent travailler avec de simple fichiers volumineux.
 Cela fonctionne très bien pour les petits projets mais avec les directives suivantes
 vous aller très vite renconter des problèmes.
-Depuis l'arrivée de sass j'ai commencé à séparer mes feuilles de styles en petits
+Depuis l'arrivée de sass j'ai commencé a séparer mes feuilles de styles en petits
 fichiers. Cette méthode est aussi très bonne. Quelle que soit la méthode que vous
 choisissez, les règles suivantes et les lignes directrices s'appliquent. La seule
 différence notable est en ce qui concerne notre table des matières et nos titres
@@ -92,7 +92,7 @@ de section. Lisez la suite pour plus d'explications ...
 ### Table des matières
 
 Au sommet des feuilles de style, je maintiens une table des matières qui détaillera
-les sections contenues dans le document, par exemple:
+les sections contenues dans le document, par exemple :
 
 
     /*------------------------------------*\
@@ -167,7 +167,7 @@ et hérite de la précédente. Il devrait y avoir moins d'annulation de styles, 
 de problèmes de spécificité, moins de création de style tous azimuts et une
 meilleure architecture de vos feuilles.
 
-Pour en savoir plus, Je vous recommancde chaudement de lire
+Pour en savoir plus, Je vous recommande chaudement de lire
 [SMACSS](http://smacss.com) de Jonathan Snook.
 
 ## Anatomie d'une règle
@@ -240,7 +240,7 @@ il est plus logique de tout concentrer sur une seule ligne.
 ## Convention de nommage
 
 La plupart du temps, j'utilise simplement des classes délimités par des traits
-d'union (ex. `. Foo-bar`, pas `. foo_bar` ou `. FooBar`), mais dans certaines
+d'union (ex. `.Foo-bar`, pas `.foo_bar` ou `.FooBar`), mais dans certaines
 circonstances, j'utilise la notation BEM (Block, Élément, Modifieur).
 
 <abbr title="Block, Element, Modifier">BEM</abbr> est une méthode pour nommer
@@ -484,7 +484,7 @@ votre CSS _en dernier_.
 ## CSSOO
 
 Je travaille d'une manière CSSOO, je sépare les composants en structure (objets) et
-peau (extensions). L'**analogie** suivante peut correspondre :
+peau (extensions). L' **analogie** suivante peut correspondre :
 
     .room{}
 
@@ -566,7 +566,7 @@ en pixels.
 Je définis une série de classes qui s'apparentent à un système de grille pour le
 dimensionnement des polices. Ces classes peuvent être utilisées pour respecter une
 hiérarchie des styles. Pour une une explication complète veuillez vous référer à
-cet article[Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css)
+cet article [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
 
 ## Raccourcis
 
@@ -651,7 +651,7 @@ il est aussi logique que `a` _doit_ être dans un `li`, donc nous mettre à la d
 
 S'il est vrai que les navigateurs ne pourront pas continuer à interpréter encore
 plus rapidement le CSS, l'efficacité est quelque chose que vous pourriez garder
-en tête. En résumé, évitez les sélecteurs non imbriquées, l'universel (`*{}`),
+en tête. En résumé, éviter les sélecteurs non imbriquées, l'universel (`*{}`),
 ainsi que les sélecteurs CSS3 plus complexes devrait permettre de contourner ces
 problèmes.
 
@@ -684,13 +684,13 @@ supposez jamais que le balisage ne changera pas. **Codez des sélecteurs qui cib
 ce que vous voulez, pas ce qui se trouve être déjà là.**
 
 Vous pouvez consulter un article complet sur la question
-[Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/)
+[Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/).
 
 ## `!important`
 
 Il est correct d'utiliser `!important` sur des classes d'assistance uniquement.
 Vous pouvez aussi faire de la prévention en ajoutant `!important`
-dans le cas où vous savez que la règle sera **toujours ** prioritaire, par exemple
+dans le cas où vous savez que la règle sera **toujours** prioritaire, par exemple
 `.error {color: red !important;}`.
 
 Utiliser `!important` pour sortir d'une situation périlleuse, n'est pas conseillé. Retravaillez votre CSS et essayez de lutter contre ces problèmes en
@@ -745,7 +745,7 @@ problème; **fixez le problème, et non ses symptômes.**
 
 Sass est mon préprocesseur de choix. **Utilisez-le à bon escient.** Utiliser Sass
 pour rendre votre CSS plus puissant, mais évitez la spécification comme la peste !
-Spécifiez seulement si c'est réellement nécessaire à votre CSS, par exemple
+Spécifiez seulement si c'est réellement nécessaire à votre CSS, par exemple :
 
     .header{}
     .header .site-nav{}
