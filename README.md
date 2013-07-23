@@ -311,7 +311,12 @@ Vous devez documenter et commenter votre code autant que vous le pouvez, quoi qu
 
 ### Commentaires sous stéroïdes
 
+<<<<<<< HEAD
+Il y a un certain nombre de techniques plus avancées que vous pouvez employer en
+ce qui concerne les commentaires, à savoir :
+=======
 Il y a un certain nombre de techniques plus avancées que vous pouvez employer en ce qui concerne les commentaires, à savoir :
+>>>>>>> origin/master
 
 * Les sélecteurs spécifiques
 * Le codage des balises
@@ -328,9 +333,13 @@ Par quasi-qualification de ce sélecteur (autrement dit en commentant le sélect
 
     /*html*/.product-page{}
 
+<<<<<<< HEAD
+Nous pouvons maintenant voir exactement où s'applique cette classe, sans avoir les inconvénients de la spécificité ou de la non-réutilisation.
+=======
 Nous pouvons maintenant voir exactement où s'applique cette classe, sans avoir les inconvénients de la la spécificité ou de la non-réutilisation.
+>>>>>>> origin/master
 
-D'autres exemples pourraient être: :
+D'autres exemples pourraient être :
 
     /*ol*/.breadcrumb{}
     /*p*/.intro{}
@@ -554,7 +563,13 @@ CSS clairement utilisé de façon arbitraire simplement « parce que ça fonctio
 
 ## Débogage
 
+<<<<<<< HEAD
+Si vous rencontrez un problème CSS **relisez le code avant de commencer à en
+ajouter encore plus** dans l'espoir de le corriger. Le problème existe en CSS et
+il est déjà écrit, ajouter plus de CSS n'est pas la bonne réponse !
+=======
 Si vous rencontrez un problème CSS **relisez le code avant de commencer à en ajouter encore plus** dans l'espoir de le corriger. Le problème existe en CSS et il est déjà écrit, ajouter plus de CSS n'est pas la bonne réponse !
+>>>>>>> origin/master
 
 Supprimez vos balises HTML et votre CSS jusqu'à ce que votre problème disparaisse, ensuite vous pouvez déterminer quelle partie du code pose problème.
 
