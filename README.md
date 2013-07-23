@@ -382,7 +382,7 @@ peut-être pas pour un autre dev. Chaque nouveau morceau de code doit-être docu
 
 ### Commentaires sous stéroïdes
 
-Il ya un certain nombre de techniques plus avancées que vous pouvez employer en
+Il y a un certain nombre de techniques plus avancées que vous pouvez employer en
 ce qui concerne les commentaires, à savoir :
 
 * Les sélecteurs spécifiques
@@ -408,16 +408,15 @@ nous pouvons communiquer nos intentions pour cette classe :
 
     /*html*/.product-page{}
 
-Nous pouvons maintenant voir exactement où s'applique cette classe, sans avoir les inconvénients de la
-la spécificité ou de la non-réutilisation.
+Nous pouvons maintenant voir exactement où s'applique cette classe, sans avoir les inconvénients de la spécificité ou de la non-réutilisation.
 
-D'autres exemples pourraient être: :
+D'autres exemples pourraient être :
 
     /*ol*/.breadcrumb{}
     /*p*/.intro{}
     /*ul*/.image-thumbs{}
 
-Dans ces cas, nous savons le contexte d'utilisation de ces classes sans jamais impacter la spécificité des selecteurs
+Dans ces cas, nous savons le contexte d'utilisation de ces classes sans jamais impacter la spécificité des sélecteurs
 
 #### Code des balises
 
