@@ -558,8 +558,7 @@ Si vous rencontrez un problème CSS **relisez le code avant de commencer à en a
 
 Supprimez vos balises HTML et votre CSS jusqu'à ce que votre problème disparaisse, ensuite vous pouvez déterminer quelle partie du code pose problème.
 
-Il peut être tentant de mettre `overflow: hidden;` pour cacher les effets
-d'une bizarrerie de mise en page, mais `overflow` n'a probablement jamais été le problème ; **fixez le problème, et non ses symptômes.**
+Il peut être tentant de mettre `overflow: hidden;` pour cacher les effets d'une bizarrerie de mise en page, mais `overflow` n'a probablement jamais été le problème ; **fixez le problème, et non ses symptômes.**
 
 ## Pré-processeurs
 
