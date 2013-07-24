@@ -10,7 +10,6 @@
 ---
 
 En travaillant sur de grands projets d'envergure fonctionnant avec des dizaines de développeurs, il est important que nous travaillions tous de façon unifiée avec pour objectif de :
-
 * Garder les feuilles de style maintenables
 * Garder le code transparent et lisible
 * Garder les feuilles de style extensibles
