@@ -3,3 +3,4 @@ guidecss/.DS_Store
 source/images/.DS_Store
 
 build/
+*.orig
