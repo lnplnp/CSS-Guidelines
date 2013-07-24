@@ -449,7 +449,10 @@ Cela inclut des choses comme les images et les sprites dont les dimensions sont 
 
 ### Taille des polices
 
-Je définis une série de classes qui s'apparentent à un système de grille pour le dimensionnement des polices. Ces classes peuvent être utilisées pour respecter une hiérarchie des styles. Pour une explication complète veuillez vous référer à cet article [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css)
+Je définis une série de classes qui s'apparentent à un système de grille pour le
+dimensionnement des polices. Ces classes peuvent être utilisées pour respecter une
+hiérarchie des styles. Pour une une explication complète veuillez vous référer à
+cet article [Pragmatic, practical font-sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).
 
 ## Raccourcis
 
@@ -505,7 +508,10 @@ Un autre exemple d'un sélecteur sur-qualifié pourrait être `ul.nav li a {}`. 
 ### Performance des sélecteurs
 
 S'il est vrai que les navigateurs ne pourront pas continuer à interpréter encore
-plus rapidement le CSS, l'efficacité est quelque chose que vous pourriez garder en tête. En résumé, évitez les sélecteurs non imbriquées, l'universel (`*{}`), ainsi que les sélecteurs CSS3 plus complexes devraient permettre de contourner ces problèmes.
+plus rapidement le CSS, l'efficacité est quelque chose que vous pourriez garder
+en tête. En résumé, éviter les sélecteurs non imbriquées, l'universel (`*{}`),
+ainsi que les sélecteurs CSS3 plus complexes devrait permettre de contourner ces
+problèmes.
 
 ## L'intention de sélection
 
@@ -530,7 +536,7 @@ une classe abstraite. Vous ne voulez pas vraiment voir comme sélecteurs
 Soyez explicites ; ciblez l'élément que vous voulez modifier, pas son parent. Ne supposez jamais que le balisage ne changera pas. **Codez des sélecteurs qui ciblent ce que vous voulez, pas ce qui se trouve être déjà là.**
 
 Vous pouvez consulter un article complet sur la question
-[Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/)
+[Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/).
 
 ## `!important`
 
@@ -563,13 +569,9 @@ CSS clairement utilisé de façon arbitraire simplement « parce que ça fonctio
 
 ## Débogage
 
-<<<<<<< HEAD
 Si vous rencontrez un problème CSS **relisez le code avant de commencer à en
 ajouter encore plus** dans l'espoir de le corriger. Le problème existe en CSS et
 il est déjà écrit, ajouter plus de CSS n'est pas la bonne réponse !
-=======
-Si vous rencontrez un problème CSS **relisez le code avant de commencer à en ajouter encore plus** dans l'espoir de le corriger. Le problème existe en CSS et il est déjà écrit, ajouter plus de CSS n'est pas la bonne réponse !
->>>>>>> origin/master
 
 Supprimez vos balises HTML et votre CSS jusqu'à ce que votre problème disparaisse, ensuite vous pouvez déterminer quelle partie du code pose problème.
 
@@ -579,7 +581,7 @@ d'une bizarrerie de mise en page, mais `overflow` n'a probablement jamais été 
 ## Pré-processeurs
 
 Sass est mon pré-processeur de choix. **Utilisez-le à bon escient.** Utiliser Sass pour rendre votre CSS plus puissant, mais évitez la spécification comme la peste !
-Spécifiez seulement si c'est réellement nécessaire à votre CSS, par exemple
+Spécifiez seulement si c'est réellement nécessaire à votre CSS, par exemple :
 
     .header{}
     .header .site-nav{}
